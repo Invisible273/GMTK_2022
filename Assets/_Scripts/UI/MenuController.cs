@@ -4,18 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuController : MonoBehaviour
+namespace GMTK2022
 {
-    [Header("Levels To Load")]
-    public string _newGameLevel;
-
-    public void NewGameDialogYes()
+    public class MenuController : MonoBehaviour
     {
-        SceneManager.LoadScene(_newGameLevel);
-    }
+        [Header("Levels To Load")]
+        public string _newGameLevel;
 
-    public void ExitButton()
-    {
-        Application.Quit();
+        public void NewGameDialogYes() {
+            SceneManager.LoadScene(_newGameLevel);
+        }
+
+        public void ExitButton() {
+            Application.Quit();
+        }
     }
 }

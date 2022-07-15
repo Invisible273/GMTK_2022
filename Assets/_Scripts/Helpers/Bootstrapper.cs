@@ -1,6 +1,7 @@
 using UnityEngine;
 
-namespace GMTK2022 {
+namespace GMTK2022
+{
     public static class Bootstrapper
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
