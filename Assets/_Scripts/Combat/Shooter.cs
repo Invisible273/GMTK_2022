@@ -11,7 +11,7 @@ public class Shooter : MonoBehaviour
 
     public void Shoot(Vector3 direction)
     {
-        GameObject projectile = myPool.GetPooledObject();
+        GameObject projectile = ObjectPool.SharedInstance.GetPooledObject();
         if (projectile != null)
         {
             projectile.transform.position = transform.position + direction.normalized;
