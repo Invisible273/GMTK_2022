@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] float speed = 100f;
     [SerializeField] float lifetime = 5f;
+    [SerializeField] Characters target;
+    [SerializeField] float damage = 10f;
     Vector2 direction;
     private Rigidbody2D rb;
     Vector3 lastVelocity;
@@ -33,8 +35,7 @@ public class Projectile : MonoBehaviour
         MoveTowardsTarget();
     }
 
-    public void SetDirection(Vector3 dir)
-    {
+    public void SetDirection(Vector3 dir) {
         direction = dir.normalized;
     }
 
@@ -48,23 +49,20 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    IEnumerator WaitAndDisable()
-    {
+    IEnumerator WaitAndDisable() {
         yield return new WaitForSeconds(lifetime);
         gameObject.SetActive(false);
 
     }
-
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        
+        if (other.gameObject.tag == target.ToString())
         {
-            print("Hit Player!");
+            other.GetComponent<Health>().GetDamaged(damage);
+           
         }
-        if(other.gameObject.tag == "Enemy")
-        {
-            print("Hit Enemy!");
-        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

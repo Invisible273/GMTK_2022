@@ -14,7 +14,9 @@ public class Shooter : MonoBehaviour
     {
         // I use Instantiate() just for testing, feel free to reuse pooling when the pool object will get created
         //GameObject projectile = myPool.GetPooledObject();
-        GameObject projectile = Instantiate(tempProjectile);
+        //GameObject projectile = Instantiate(tempProjectile);
+        GameObject projectile = ObjectPool.SharedInstance.GetPooledObject();
+        
         if (projectile != null)
         {
             projectile.transform.position = transform.position + direction.normalized;
