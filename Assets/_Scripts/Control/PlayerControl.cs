@@ -9,14 +9,12 @@ public class PlayerControl : MonoBehaviour
     Coroutine routine;
     Camera cam;
 
-    // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
         mover = GetComponent<Mover>();        
     }
 
-    // Update is called once per frame
     void Update()
     {       
         if(Input.GetKeyDown(KeyCode.Mouse0))
