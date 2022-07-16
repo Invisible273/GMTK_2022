@@ -34,7 +34,11 @@ public class AIControl : MonoBehaviour
 
     private Vector2 GetDirectionToPlayer()
     {
+        if(player)
+        {
         return player.transform.position - transform.position;
+        }
+        else return Vector2.zero;
     }
 
     private void EnemyMovement()
