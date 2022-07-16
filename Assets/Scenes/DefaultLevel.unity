@@ -282,6 +282,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4749263600767302967, guid: cf4157242ac1e5144b083937348619a0, type: 3}
+      propertyPath: rollSpeedDecay
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4749263600767302972, guid: cf4157242ac1e5144b083937348619a0, type: 3}
       propertyPath: m_Name
       value: PrototypePlayer
