@@ -6,8 +6,10 @@ public class AIControl : MonoBehaviour
 {
     [SerializeField] float minDistanceFromPlayer = 5f;
     [SerializeField] float shootInterval = 2f;
+    [SerializeField] LayerMask fieldLayer;
     Coroutine routine;
     GameObject player = null;
+    Collider2D myCol;
 
     Vector2 directionToPlayer;
 
@@ -16,6 +18,7 @@ public class AIControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myCol = GetComponent<Collider2D>();
         player = GameObject.FindWithTag("Player");      
         StartCoroutine(AimAndShoot());
     }
@@ -53,9 +56,21 @@ public class AIControl : MonoBehaviour
         while(true)
         {
         Vector2 shootDir = GetDirectionToPlayer();
-        GetComponent<Shooter>().Shoot(shootDir);
+        if(CanShoot(fieldLayer))
+        {
+            GetComponent<Shooter>().Shoot(shootDir);
+        }
+        
         yield return new WaitForSeconds(shootInterval);
         }
 
+    }
+
+    private bool CanShoot(LayerMask layer)
+    {
+        int fLayer = layer.value;
+        print(myCol.IsTouchingLayers(fLayer));
+        return myCol.IsTouchingLayers(fLayer);
+       
     }
 }

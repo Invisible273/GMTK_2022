@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-   // public static ObjectPool SharedInstance;
+    public static ObjectPool SharedInstance;
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public int amountToPool;
 
     void Awake()
     {
-        //SharedInstance = this;
-    }
-
-    void Start()
-    {
+        SharedInstance = this;
         pooledObjects = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < amountToPool; i++)
@@ -26,6 +22,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
+    
     public GameObject GetPooledObject()
     {
         for (int i = 0; i < amountToPool; i++)

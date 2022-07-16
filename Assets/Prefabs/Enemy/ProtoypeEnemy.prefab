@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.4716981, g: 0.05562477, b: 0.05562477, a: 1}
   m_FlipX: 0
@@ -148,9 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f866d55e7b9802347a4a1043ca4575a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMod: 1000
-  horizontal: 0
-  vertical: 0
+  speedMod: 300
 --- !u!114 &8708076882729587013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1f8dce9455f2e45813889698d9500f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotDelay: 0.3
+  myPool: {fileID: 0}
 --- !u!114 &8708076882729587012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205eef6c62cab4647a3ff82d27c1fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minDistanceFromPlayer: 3
+  shootInterval: 2
+  fieldLayer:
+    serializedVersion: 2
+    m_Bits: 128
