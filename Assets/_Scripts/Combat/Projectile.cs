@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] float speed = 100f;
     [SerializeField] float lifetime = 5f;
+    [SerializeField] Characters target;
+    [SerializeField] float damage = 10f;
     Vector2 direction;
     // Start is called before the first frame update
     private void OnEnable() {
@@ -32,13 +34,15 @@ public class Projectile : MonoBehaviour
         gameObject.SetActive(false);
 
     }
-
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Player") {
-            print("Hit Player!");
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        
+        if (other.gameObject.tag == target.ToString())
+        {
+            other.GetComponent<Health>().GetDamaged(damage);
+           
         }
-        if(other.gameObject.tag == "Enemy") {
-            print("Hit Enemy!");
-        }
+        
     }
+
 }
