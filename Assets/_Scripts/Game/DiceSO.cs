@@ -23,8 +23,6 @@ namespace GMTK2022
 
 
         public void Init() {
-            if(_dice != null) return;
-
             _dice = new();
         }
 
