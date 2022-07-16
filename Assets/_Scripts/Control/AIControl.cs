@@ -69,7 +69,7 @@ public class AIControl : MonoBehaviour
     private bool CanShoot(LayerMask layer)
     {
         int fLayer = layer.value;
-        print(myCol.IsTouchingLayers(fLayer));
+       
         return myCol.IsTouchingLayers(fLayer);
        
     }
