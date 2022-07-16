@@ -10,32 +10,26 @@ public class Projectile : MonoBehaviour
     [SerializeField] float damage = 10f;
     Vector2 direction;
     // Start is called before the first frame update
-    private void OnEnable() 
-    {
-        StartCoroutine(WaitAndDisable());        
+    private void OnEnable() {
+        StartCoroutine(WaitAndDisable());
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         MoveTowardsTarget();
     }
 
-    public void SetDirection(Vector3 dir)
-    {
+    public void SetDirection(Vector3 dir) {
         direction = dir.normalized;
     }
 
-    void MoveTowardsTarget()
-    {
-        if(direction != null)
-        {
+    void MoveTowardsTarget() {
+        if(direction != null) {
             GetComponent<Rigidbody2D>().velocity = direction * speed * Time.deltaTime;
         }
     }
 
-    IEnumerator WaitAndDisable()
-    {
+    IEnumerator WaitAndDisable() {
         yield return new WaitForSeconds(lifetime);
         gameObject.SetActive(false);
 

@@ -6,15 +6,13 @@ public class WeaponRotation : MonoBehaviour
 {
     private PlayerController playerController;
 
-    private void Awake()
-    {
+    private void Awake() {
         playerController = transform.parent.GetComponent<PlayerController>();
 
         playerController.onMousePositionUpdate += OnMousePositionUpdate;
     }
 
-    private void OnMousePositionUpdate(Vector3 mousePos)
-    {
+    private void OnMousePositionUpdate(Vector3 mousePos) {
         Vector3 difference = mousePos - transform.position;
         difference.Normalize();
         float rotationAngle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
