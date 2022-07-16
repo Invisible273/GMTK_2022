@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     private Vector2 walkVector;
     private float currentRollSpeed;
     private Vector3 currentRollDir;
+    public Action<Vector2> OnRoll;
 
     private State state;
     private enum State
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour
         state = State.Rolling;
         currentRollSpeed = maxRollSpeed;
         currentRollDir = new Vector3(movementDir.x, movementDir.y, 0);
+        OnRoll?.Invoke(movementDir);
     }
 
     private void FixedUpdate() {
