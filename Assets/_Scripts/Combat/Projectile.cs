@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
 
     void MoveTowardsTarget() {
         if(direction != null) {
-            GetComponent<Rigidbody2D>().velocity = direction * speed * Time.deltaTime;
+            GetComponent<Rigidbody2D>().velocity = direction * speed;
         }
     }
 

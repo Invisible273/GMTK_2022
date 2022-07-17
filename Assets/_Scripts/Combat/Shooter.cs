@@ -5,10 +5,7 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     [SerializeField] ObjectPool myPool;
-     
-
-   
-
+    
     public void Shoot(Vector3 direction)
     {
         GameObject projectile = ObjectPool.SharedInstance.GetPooledObject();
@@ -18,7 +15,5 @@ public class Shooter : MonoBehaviour
             projectile.SetActive(true);
             projectile.GetComponent<Projectile>().SetDirection(direction);
         }
-        
-
     }
 }

@@ -13,23 +13,17 @@ public class AIControl : MonoBehaviour
 
     Vector2 directionToPlayer;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         myCol = GetComponent<Collider2D>();
         player = GameObject.FindWithTag("Player");      
         StartCoroutine(AimAndShoot());
-    }
-    
-    // Update is called once per frame
+    } 
+
     void Update()
     {
         directionToPlayer = GetDirectionToPlayer();
         EnemyMovement();
-
-
     }
 
     private Vector2 GetDirectionToPlayer()
