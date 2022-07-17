@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     float[] rX;
 
     float timeSinceDifficultyIncrease;
+    private float timeSinceLevelStart;
 
     void Start()
     {
