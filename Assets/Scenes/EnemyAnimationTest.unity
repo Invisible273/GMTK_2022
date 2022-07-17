@@ -146,6 +146,17 @@ MonoBehaviour:
     m_Bits: 0
   maxRollSpeed: 25
   rollSpeedDecay: 5
+--- !u!114 &902463736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 925256930828350100, guid: 206573e5f33aab1478a62884f3bedcf7, type: 3}
+  m_PrefabInstance: {fileID: 1207139150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825f7953950e8e84f8ba28fab8154f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1207139150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -327,6 +338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8793448266650134649, guid: 1f89212bf4f0d41438642b2daf41f314, type: 3}
+      propertyPath: myPool
+      value: 
+      objectReference: {fileID: 902463736}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f89212bf4f0d41438642b2daf41f314, type: 3}
 --- !u!1 &1958884872
