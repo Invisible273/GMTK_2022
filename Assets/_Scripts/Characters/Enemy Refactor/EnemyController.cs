@@ -52,6 +52,7 @@ public class EnemyController : MonoBehaviour
     {
         while(true)
         {
+            
             Vector2 shootDir = GetDirectionToPlayer();
             if(CanShoot(fieldLayer))
             {
