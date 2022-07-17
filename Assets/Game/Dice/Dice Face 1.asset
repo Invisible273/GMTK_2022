@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Dice Face 1
   m_EditorClassIdentifier: 
   _faceValue: 1
-  _sprite: {fileID: -1729235524, guid: f3120824b0eedfa4aaf1a6c3844e3877, type: 3}
+  _spriteTop: {fileID: -276334581, guid: 002599466463a334e9bd7dd7754c81b1, type: 3}
+  _spriteFront: {fileID: 1121268816, guid: 002599466463a334e9bd7dd7754c81b1, type: 3}
+  _spriteSide: {fileID: 1882643376, guid: 002599466463a334e9bd7dd7754c81b1, type: 3}
   _audioClip: {fileID: 8300000, guid: 69fe105081994bb4f865969ac739566b, type: 3}
