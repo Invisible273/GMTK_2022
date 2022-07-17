@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GMTK2022
-{
+
     public class PauseManager : MonoBehaviour
     {
        [SerializeField] Canvas pauseUICanvas;
         private PlayerInputActions playerInput;
-        static bool isPaused = false;
+        public static bool isPaused = false;
         PlayerInputActions pAct;
         
         
-        void Start()
+        void Awake()
         {
             pauseUICanvas.gameObject.SetActive(false);
         }
@@ -41,4 +40,4 @@ namespace GMTK2022
         }
                 
     }
-}
+

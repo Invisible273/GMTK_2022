@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &157361221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157361223}
+  - component: {fileID: 157361222}
+  m_Layer: 0
+  m_Name: GameplayManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &157361222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157361221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c4fc0b4900dc74d8543d6bbfeab124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreBoard: {fileID: 0}
+  pManager: {fileID: 1948475922}
+--- !u!4 &157361223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157361221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 414.3615, y: 139.94978, z: -1.2948928}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &157668871 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 925256930828350100, guid: 206573e5f33aab1478a62884f3bedcf7, type: 3}
@@ -533,13 +579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205eef6c62cab4647a3ff82d27c1fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistanceFromPlayer: 3
-  shootInterval: 2
-  fieldLayer:
-    m_Bits: 128
-  player: {fileID: 0}
-  myCol: {fileID: 0}
-  directionToPlayer: {x: 0, y: 0}
 --- !u!114 &1512045643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,9 +604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f866d55e7b9802347a4a1043ca4575a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMod: 300
-  startingRoll: 1
-  mybody: {fileID: 0}
 --- !u!61 &1512045645
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -735,18 +771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ea28abb97b7f34f8588dc4d731a0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionLayerMask:
-    m_Bits: 1
-  movementSpeed: 5
-  maxRollSpeed: 2
-  rollSpeedDecay: 0
-  playerController: {fileID: 0}
-  rb: {fileID: 0}
-  walkVector: {x: 0, y: 0}
-  currentRollSpeed: 0
-  currentRollDir: {x: 0, y: 0, z: 0}
-  debugRollTime: 0
-  state: 0
 --- !u!61 &1535578249
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1269,6 +1293,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthToDisplay: {fileID: 0}
+--- !u!114 &1948475922 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1568772892950129220, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
+  m_PrefabInstance: {fileID: 1568772892418005823}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f6a371a4c8e7c4b99c337a8c359a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &601852755475635860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1282,7 +1317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 601852754432983712, guid: 69c48823744e78b42ad54881159b7fc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.926006
+      value: 16.879482
       objectReference: {fileID: 0}
     - target: {fileID: 601852754432983712, guid: 69c48823744e78b42ad54881159b7fc3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1406,6 +1441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1568772892950129218, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1568772892950129219, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
       propertyPath: m_RootOrder
       value: 8

@@ -9,6 +9,7 @@ public class GameplayManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI scoreBoard = null;
+    [SerializeField] PauseManager pManager = null;
 
     [HideInInspector]
     public static GameplayManager instance = null;
@@ -39,14 +40,16 @@ public class GameplayManager : MonoBehaviour
         switch (gameState)
         {
             case GameState.Pause:
-                if(Input.anyKey)
+                if(Input.GetKeyDown(KeyCode.Escape))
                 {
+                    
                     SwitchStateTo(GameState.Play);
                 }
                 break;
             case GameState.Play:
                 if(Input.GetKeyDown(KeyCode.Escape))
                 {
+                   
                     SwitchStateTo(GameState.Pause);
                 }
                 break;
@@ -63,18 +66,31 @@ public class GameplayManager : MonoBehaviour
     private void SwitchStateTo(GameState state)
     {
         gameState = state;
-        // switch (gameState)
-        // {
-        //     case GameState.Pause:
+        switch (gameState)
+        {
+            case GameState.Pause:
                 
-        //         break;
-        //     case GameState.Play:
+                pManager.Pause();
+           
                 
-        //         break;
-        //     case GameState.Dead:
+                break;
+            case GameState.Play:
+            if(PauseManager.isPaused)
+            {
+                pManager.Pause();
+            }
+
                 
-        //         break;
-        // }
+                break;
+            case GameState.Dead:
+                if (PauseManager.isPaused)
+                {
+                    pManager.Pause();
+                }
+
+                
+                break;
+        }
     }
 
     private void ResetLevel()
