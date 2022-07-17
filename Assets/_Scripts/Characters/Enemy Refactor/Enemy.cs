@@ -25,6 +25,11 @@ public class Enemy : Character
         shooter.Shoot(targetPos);
     }
 
+    protected override void OnTargetUpdate(Vector3 targetTransform)
+    {
+        weaponRotator.Rotate2TargetSnap(targetTransform);
+    }
+
     private void FixedUpdate()
     {
         HandleMovement();
