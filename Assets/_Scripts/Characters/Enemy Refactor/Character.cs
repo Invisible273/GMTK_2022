@@ -10,12 +10,14 @@ public class Character : MonoBehaviour
     private Vector2 walkVector;
     private Rigidbody2D rb;
 
-    private WeaponRotator weaponRotator;
+    protected WeaponRotator weaponRotator;
 
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         weaponRotator = GetComponentInChildren<WeaponRotator>();
+
+        walkVector = Vector2.zero;
     }
 
     protected void OnDirectionRecieved(Vector2 movementDir)
@@ -23,7 +25,7 @@ public class Character : MonoBehaviour
         walkVector = movementDir * movementSpeed;
     }
 
-    protected void OnTargetUpdate(Vector3 targetTransform)
+    protected virtual void OnTargetUpdate(Vector3 targetTransform)
     {
         weaponRotator.Rotate2Target(targetTransform);
     }

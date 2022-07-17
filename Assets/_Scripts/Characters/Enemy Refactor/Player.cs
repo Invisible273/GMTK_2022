@@ -4,19 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-[RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour
+public class Player : Character
 {
     private const float ROLL_THRESHOLD = 5f;
 
     [SerializeField] private LayerMask collisionLayerMask;
-    [SerializeField] private float movementSpeed;
     [SerializeField] private float maxRollSpeed;
     [SerializeField] private float rollSpeedDecay;
 
     private PlayerController playerController;
-    private Rigidbody2D rb;
-    private Vector2 walkVector;
     private float currentRollSpeed;
     private Vector3 currentRollDir;
     public Action<Vector2> OnRoll;
@@ -31,19 +27,15 @@ public class Player : MonoBehaviour
         Rolling,
     }
 
-    private void Start() {
+    protected override void Awake() {
+        base.Awake();
         playerController = GetComponent<PlayerController>();
-        rb = GetComponent<Rigidbody2D>();
 
-        playerController.onMovementInput += OnMovementInputRecieved;
+        playerController.onMovementInput += OnDirectionRecieved;
         playerController.onRollInput += OnRollInputRecieved;
+        playerController.onMousePositionUpdate += OnTargetUpdate;
 
-        walkVector = Vector2.zero;
         state = State.Normal;
-    }
-
-    private void OnMovementInputRecieved(Vector2 movementDir) {
-        walkVector = movementDir * movementSpeed;
     }
 
     private void OnRollInputRecieved(Vector2 movementDir) {
@@ -65,10 +57,6 @@ public class Player : MonoBehaviour
                 HandleRolling();
                 break;
         }
-    }
-
-    private void HandleMovement() {
-        rb.velocity = walkVector;
     }
 
     private void HandleRolling() {

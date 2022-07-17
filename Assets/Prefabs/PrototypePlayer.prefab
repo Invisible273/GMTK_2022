@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4749263600767302967}
   m_Layer: 0
   m_Name: PrototypePlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,10 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ea28abb97b7f34f8588dc4d731a0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 3
   collisionLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  movementSpeed: 3
   maxRollSpeed: 25
   rollSpeedDecay: 5
 --- !u!1 &6045913858177513720
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6045913858177513727}
-  - component: {fileID: 6045913858177513726}
+  - component: {fileID: 3371278066009256414}
   m_Layer: 0
   m_Name: WeaponJoint
   m_TagString: Untagged
@@ -199,7 +199,7 @@ Transform:
   m_Father: {fileID: 4749263600767302973}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6045913858177513726
+--- !u!114 &3371278066009256414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6045913858177513720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e7ed6e95c00d144b938e6e90f86645c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ccc4a6d7d7c3ce49bf9e87fe736e8b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6045913859040848383
