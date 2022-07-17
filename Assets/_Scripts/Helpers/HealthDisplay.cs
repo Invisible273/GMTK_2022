@@ -10,9 +10,12 @@ public class HealthDisplay : MonoBehaviour
 
     private void Start() 
     {
+        if(healthToDisplay)
+        {
         hSlider = GetComponent<Slider>();
         hSlider.maxValue = healthToDisplay.GetMaxHealth();
         hSlider.value = healthToDisplay.GetCurrentHealth();
+        }
     }
     private void Update() {
         if(healthToDisplay)
