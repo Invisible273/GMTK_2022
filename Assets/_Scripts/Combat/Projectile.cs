@@ -59,7 +59,12 @@ public class Projectile : MonoBehaviour
         
         if (other.gameObject.tag == target.ToString())
         {
-            other.GetComponent<Health>().GetDamaged(damage);
+            Health tHealth = other.GetComponent<Health>();
+            if(tHealth)
+            {
+                other.GetComponent<Health>().GetDamaged(damage);
+            }
+           
            
         }
         
