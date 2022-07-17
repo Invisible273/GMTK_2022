@@ -152,23 +152,23 @@ BlendTree:
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: lookX
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 81cae165f1862de48a8df118a5082c40, type: 2}
-    m_Threshold: 0.33333334
-    m_Position: {x: 1, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: lookX
+    m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 9798a12b70b918d4d8c981222d2b3ce9, type: 2}
-    m_Threshold: 0.6666667
+    m_Threshold: 0.33333334
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: lookX
+    m_DirectBlendParameter: Blend
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 81cae165f1862de48a8df118a5082c40, type: 2}
+    m_Threshold: 0.6666667
+    m_Position: {x: 1, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 3b589033401dd5449b7977ad3bc1a3ab, type: 2}
@@ -176,7 +176,7 @@ BlendTree:
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: lookX
+    m_DirectBlendParameter: Blend
     m_Mirror: 0
   m_BlendParameter: lookX
   m_BlendParameterY: lookY
@@ -197,18 +197,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 6628491308029018848}
     m_Position: {x: 320.624, y: 136.07492, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 6896389227608198254}
-    m_Position: {x: 360, y: 200, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -7135779463317175630}
-    m_Position: {x: 390.624, y: 266.07492, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 7509910612401595356}
-    m_Position: {x: 425.624, y: 331.07492, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -8261006396486056167}
-    m_Position: {x: 460.624, y: 396.07492, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
