@@ -58,9 +58,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public Action OnAttackInput;
     public void Attack(InputAction.CallbackContext context) {
         if(context.performed) {
-
+            OnAttackInput?.Invoke();
         }
     }
 
