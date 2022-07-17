@@ -2134,6 +2134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 4749263600957770546}
   _playerController: {fileID: 4749263600957770547}
+  attackClip: {fileID: 7400000, guid: 35e1bf1fc9a9c6e48a2e60cced083e83, type: 2}
 --- !u!95 &1153077121
 Animator:
   serializedVersion: 4

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace GMTK2022
@@ -8,24 +9,33 @@ namespace GMTK2022
         [SerializeField] private Player _player;
         [SerializeField] private PlayerController _playerController;
 
+        public AnimationClip attackClip;
+
         private Vector2 _lastMovementInput;
+        private Vector3 _lastMouseInput;
         private bool _isRolling;
+        private bool _isAttacking;
 
         private void Awake() {
             _animator = GetComponent<Animator>();
             if(!_player || !_playerController) Debug.LogError("Player controllers not set!");
             _lastMovementInput = Vector2.zero;
+            _lastMouseInput = Vector2.zero;
             _isRolling = false;
         }
 
         private void OnEnable() {
             _playerController.onMovementInput += UpdateMovementVector;
+            _playerController.onMousePositionUpdate += UpdateMouseVector;
+            _playerController.OnAttackInput += AttackStarted;
             _player.OnRoll += RollingStarted;
             _player.OnRollEnd += RollingComplete;
         }
 
         private void OnDisable() {
             _playerController.onMovementInput -= UpdateMovementVector;
+            _playerController.onMousePositionUpdate -= UpdateMouseVector;
+            _playerController.OnAttackInput -= AttackStarted;
             _player.OnRoll -= RollingStarted;
             _player.OnRollEnd -= RollingComplete;
         }
@@ -52,6 +62,10 @@ namespace GMTK2022
             _animator.SetFloat("movementY", direction.y);
         }
 
+        private void UpdateMouseVector(Vector3 position) {
+            _lastMouseInput = position;
+        }
+
         private void RollingStarted(Vector2 direction) {
             _isRolling = true;
             _animator.SetFloat("rollX", direction.x);
@@ -62,7 +76,24 @@ namespace GMTK2022
             _isRolling = false;
         }
 
+        private void AttackStarted() {
+            Vector3 mouseVector = _lastMouseInput - transform.position;
+            mouseVector.Normalize();
+            _animator.SetFloat("attackX", mouseVector.x);
+            _animator.SetFloat("attackY", mouseVector.y);
+
+            StartCoroutine(WaitForAttackAnimation(attackClip.length));
+        }
+
+        private IEnumerator WaitForAttackAnimation(float duration) {
+            _isAttacking = true;
+            yield return new WaitForSeconds(duration);
+            _isAttacking = false;
+        }
+                
         private int GetState() {
+            //Highest priority checked first
+            if(_isAttacking) return Attack;
             if(_isRolling) return Roll;
             return _lastMovementInput == Vector2.zero ? Idle : Walk;
         }
@@ -72,8 +103,9 @@ namespace GMTK2022
         private int _currentState;
 
         private static readonly int Idle = Animator.StringToHash("Idle Blend Tree");
-        private static readonly int Walk = Animator.StringToHash("Walking Blend Tree");
+        private static readonly int Walk = Animator.StringToHash("Walk Blend Tree");
         private static readonly int Roll = Animator.StringToHash("Roll Blend Tree");
+        private static readonly int Attack = Animator.StringToHash("Attack Blend Tree");
 
         #endregion
     }
