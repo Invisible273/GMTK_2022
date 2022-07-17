@@ -15,6 +15,7 @@ namespace GMTK2022
         private Vector3 _lastMouseInput;
         private bool _isRolling;
         private bool _isAttacking;
+        private bool _isDead;
 
         private void Awake() {
             _animator = GetComponent<Animator>();
@@ -22,6 +23,8 @@ namespace GMTK2022
             _lastMovementInput = Vector2.zero;
             _lastMouseInput = Vector2.zero;
             _isRolling = false;
+            _isAttacking = false;
+            _isDead = false;
         }
 
         private void OnEnable() {
@@ -90,9 +93,14 @@ namespace GMTK2022
             yield return new WaitForSeconds(duration);
             _isAttacking = false;
         }
+
+        private void DeathTriggered() {
+            _isDead = true;
+        }
                 
         private int GetState() {
             //Highest priority checked first
+            if(_isDead) return Dead;
             if(_isAttacking) return Attack;
             if(_isRolling) return Roll;
             return _lastMovementInput == Vector2.zero ? Idle : Walk;
@@ -106,6 +114,7 @@ namespace GMTK2022
         private static readonly int Walk = Animator.StringToHash("Walk Blend Tree");
         private static readonly int Roll = Animator.StringToHash("Roll Blend Tree");
         private static readonly int Attack = Animator.StringToHash("Attack Blend Tree");
+        private static readonly int Dead = Animator.StringToHash("Dead");
 
         #endregion
     }
