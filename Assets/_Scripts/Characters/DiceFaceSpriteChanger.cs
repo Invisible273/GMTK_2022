@@ -18,19 +18,11 @@ namespace GMTK2022
             UpdateFaces();
             _player.OnRoll += HideRenderers;
             _player.OnRollEnd += ShowRenderers;
-            //_dice.OnRollUp += UpdateFaces;
-            //_dice.OnRollDown += UpdateFaces;
-            //_dice.OnRollLeft += UpdateFaces;
-            //_dice.OnRollRight += UpdateFaces;
         }
 
         private void OnDisable() {
             _player.OnRoll -= HideRenderers;
             _player.OnRollEnd -= ShowRenderers;
-            //_dice.OnRollUp -= UpdateFaces;
-            //_dice.OnRollDown -= UpdateFaces;
-            //_dice.OnRollLeft -= UpdateFaces;
-            //_dice.OnRollRight -= UpdateFaces;
         }
 
         private void HideRenderers(Vector2 direction) {
