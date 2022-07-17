@@ -13,18 +13,28 @@ public class EnemySpawner : MonoBehaviour
     Vector2 fieldCenter;
     float[] rX;
 
-    // Start is called before the first frame update
+    float timeSinceDifficultyIncrease;
+
     void Start()
     {
         rX = new float[2] { -offset, field.size.x + offset};
-        fieldCenter = new Vector2(field.size.x *0.5f, field.size.y * 0.5f);        
+        fieldCenter = new Vector2(field.size.x *0.5f, field.size.y * 0.5f);     
+        timeSinceDifficultyIncrease = 0;   
         StartCoroutine(SpawnerRoutine());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //Timer that increases spawn rate
+        timeSinceDifficultyIncrease += Time.deltaTime;
+        if (timeSinceLevelStart >= 100.0f)
+        {
+            if (timeBetweenSpawns >= 1.0f)
+            {
+                timeBetweenSpawns -= 0.1f;
+            }
+            timeSinceLevelStart = 0;
+        }
     }
 
     private IEnumerator SpawnerRoutine()
