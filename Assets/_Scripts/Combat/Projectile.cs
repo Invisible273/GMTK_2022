@@ -9,13 +9,29 @@ public class Projectile : MonoBehaviour
     [SerializeField] Characters target;
     [SerializeField] float damage = 10f;
     Vector2 direction;
+    private Rigidbody2D rb;
+    Vector3 lastVelocity;
+    bool started = false;
+
+    public int value; // Goes from 1 to 6
+
     // Start is called before the first frame update
-    private void OnEnable() {
+    private void OnEnable() 
+    {
+        rb = GetComponent<Rigidbody2D>();
+
+        // For now the value of the bullet will be random, we'll decide if we want it to depend from other things
+        value = Random.Range(1, 6);
+
         StartCoroutine(WaitAndDisable());
+
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
+        lastVelocity = rb.velocity;
+
         MoveTowardsTarget();
     }
 
@@ -23,9 +39,13 @@ public class Projectile : MonoBehaviour
         direction = dir.normalized;
     }
 
-    void MoveTowardsTarget() {
-        if(direction != null) {
-            GetComponent<Rigidbody2D>().velocity = direction * speed * Time.deltaTime;
+    void MoveTowardsTarget()
+    {
+        if(direction != null && !started)
+        {
+            rb.AddForce(new Vector2(direction.x * speed * Time.deltaTime, direction.y * speed * Time.deltaTime));
+            started = true;
+            //GetComponent<Rigidbody2D>().velocity = direction * speed * Time.deltaTime;
         }
     }
 
@@ -43,6 +63,14 @@ public class Projectile : MonoBehaviour
            
         }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        print(collision.gameObject.layer);
+        var speed = lastVelocity.magnitude;
+        var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+        rb.velocity = direction * Mathf.Max(speed, 0f);
     }
 
 }
