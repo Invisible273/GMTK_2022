@@ -8,7 +8,7 @@ using UnityEngine;
        [SerializeField] Canvas pauseUICanvas;
         private PlayerInputActions playerInput;
         public static bool isPaused = false;
-        PlayerInputActions pAct;
+        
         
         
         void Awake()
