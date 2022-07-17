@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -37,8 +38,6 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -48,4 +47,7 @@ TagManager:
     locked: 0
   - name: Playfield
     uniqueID: 1011722867
+    locked: 0
+  - name: Objects
+    uniqueID: 2565809679
     locked: 0
