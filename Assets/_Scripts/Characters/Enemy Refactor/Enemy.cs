@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyController))]
 public class Enemy : Character
 {
+    [SerializeField]
+    private int enemyValue = 1;
+
     private Shooter shooter;
     private EnemyController enemyController;
 
@@ -33,5 +36,10 @@ public class Enemy : Character
     private void FixedUpdate()
     {
         HandleMovement();
+    }
+
+    private void OnDestroy() 
+    {
+        GameplayManager.instance.AddScore(enemyValue);
     }
 }
