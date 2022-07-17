@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     private float currentRollSpeed;
     private Vector3 currentRollDir;
     public Action<Vector2> OnRoll;
+    public Action<Vector2> OnRollEnd;
 
     private float debugRollTime = 0.0f;
 
@@ -78,7 +79,7 @@ public class Player : MonoBehaviour
         if(currentRollSpeed < ROLL_THRESHOLD)
         {
             state = State.Normal;
-
+            OnRollEnd?.Invoke(currentRollDir);
             Debug.Log(debugRollTime);
         } 
     }
