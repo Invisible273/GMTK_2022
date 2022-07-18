@@ -28,13 +28,13 @@ public class EnemySpawner : MonoBehaviour
     {
         //Timer that increases spawn rate
         timeSinceDifficultyIncrease += Time.deltaTime;
-        if (timeSinceLevelStart >= 100.0f)
+        if (timeSinceDifficultyIncrease >= 100.0f)
         {
             if (timeBetweenSpawns >= 1.0f)
             {
                 timeBetweenSpawns -= 0.1f;
             }
-            timeSinceLevelStart = 0;
+            timeSinceDifficultyIncrease = 0;
         }
     }
 
