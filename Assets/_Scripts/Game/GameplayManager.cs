@@ -32,7 +32,7 @@ public class GameplayManager : MonoBehaviour
 
     private void Start()
     {
-        SwitchStateTo(GameState.Pause);
+        SwitchStateTo(GameState.Play);
     }
 
     private void Update() 
