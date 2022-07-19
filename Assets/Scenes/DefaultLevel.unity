@@ -483,6 +483,10 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5052501888624554510, guid: 41e80be46749fd9439c219516f3ff60e, type: 3}
+      propertyPath: _playerController
+      value: 
+      objectReference: {fileID: 667576104}
     - target: {fileID: 5232755913310062953, guid: 41e80be46749fd9439c219516f3ff60e, type: 3}
       propertyPath: m_Name
       value: GameplayManager
@@ -795,6 +799,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &667576104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2203771743708642502, guid: 9d0c47c1543903d4ebec180c05432613, type: 3}
+  m_PrefabInstance: {fileID: 765817049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667576091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5938ef7d923685e4ab68aa4085a5ef22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &765817049
 PrefabInstance:
   m_ObjectHideFlags: 0

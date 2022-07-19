@@ -1,8 +1,9 @@
-using UnityEngine;
-
-public enum Characters
+namespace GMTK2022
 {
-    Player,
-    Enemy,
+    public enum Characters
+    {
+        Player,
+        Enemy,
 
+    }
 }
