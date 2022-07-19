@@ -21,9 +21,12 @@ namespace GMTK2022
         public DiceFaceSO RightFace => _diceFaces[_dice.RightFace - 1];
         public DiceFaceSO LeftFace => _diceFaces[_dice.LeftFace - 1];
 
+        private void OnEnable() {
+            Init();
+        }
 
         public void Init() {
-            _dice = new();
+            if(_dice == null) _dice = new();
         }
 
         public void RollUp() {
