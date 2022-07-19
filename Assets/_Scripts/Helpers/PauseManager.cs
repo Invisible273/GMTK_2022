@@ -5,6 +5,7 @@ namespace GMTK2022
     public class PauseManager : MonoBehaviour
     {
         [SerializeField] Canvas pauseUICanvas;
+        [SerializeField] private PlayerController _playerController;
         public static bool isPaused = false;
 
         void Awake() {
@@ -16,10 +17,12 @@ namespace GMTK2022
                 isPaused = true;
                 pauseUICanvas.gameObject.SetActive(true);
                 Time.timeScale = 0;
+                _playerController.enabled = false;
             } else if(isPaused) {
                 isPaused = false;
                 pauseUICanvas.gameObject.SetActive(false);
                 Time.timeScale = 1;
+                _playerController.enabled = true;
             }
         }
 
