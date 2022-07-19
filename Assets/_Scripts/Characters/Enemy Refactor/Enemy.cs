@@ -1,45 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyController))]
-public class Enemy : Character
+namespace GMTK2022
 {
-    [SerializeField]
-    private int enemyValue = 1;
-
-    private Shooter shooter;
-    private EnemyController enemyController;
-
-    protected override void Awake()
+    [RequireComponent(typeof(EnemyController))]
+    public class Enemy : Character
     {
-        base.Awake();
-        shooter = GetComponentInChildren<Shooter>();
-        enemyController = GetComponent<EnemyController>();
+        [SerializeField]
+        private int enemyValue = 1;
 
-        enemyController.onMove2Target += OnDirectionRecieved;
-        enemyController.onShoot2Target += OnShootAtTarget;
-        enemyController.onRotate2Target += OnTargetUpdate;
-    }
+        private Shooter shooter;
+        private EnemyController enemyController;
 
-    private void OnShootAtTarget(Vector2 targetPos2D)
-    {
-        Vector3 targetPos = new Vector3(targetPos2D.x, targetPos2D.y, transform.position.z);
-        shooter.Shoot(targetPos);
-    }
+        protected override void Awake() {
+            base.Awake();
+            shooter = GetComponentInChildren<Shooter>();
+            enemyController = GetComponent<EnemyController>();
 
-    protected override void OnTargetUpdate(Vector3 targetTransform)
-    {
-        weaponRotator.Rotate2TargetSnap(targetTransform);
-    }
+            enemyController.onMove2Target += OnDirectionRecieved;
+            enemyController.onShoot2Target += OnShootAtTarget;
+            enemyController.onRotate2Target += OnTargetUpdate;
+        }
 
-    private void FixedUpdate()
-    {
-        HandleMovement();
-    }
+        private void OnShootAtTarget(Vector2 targetPos2D) {
+            Vector3 targetPos = new Vector3(targetPos2D.x, targetPos2D.y, transform.position.z);
+            shooter.Shoot(targetPos);
+        }
 
-    private void OnDestroy() 
-    {
-        GameplayManager.instance.AddScore(enemyValue);
+        protected override void OnTargetUpdate(Vector3 targetTransform) {
+            weaponRotator.Rotate2TargetSnap(targetTransform);
+        }
+
+        private void FixedUpdate() {
+            HandleMovement();
+        }
+
+        private void OnDestroy() {
+            GameplayManager.instance.AddScore(enemyValue);
+        }
     }
 }
