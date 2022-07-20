@@ -57,7 +57,7 @@ namespace GMTK2022
                 Health tHealth = other.GetComponent<Health>();
                 if(tHealth) {
                     other.GetComponent<Health>().GetDamaged(damage);
-                    Destroy(gameObject);
+                    gameObject.SetActive(false);
                 }
             }
         }
