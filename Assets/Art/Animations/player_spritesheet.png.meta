@@ -43,13 +43,13 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
-  spriteMeshType: 1
+  spriteExtrude: 0
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,19 +112,31 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_0
+      name: player_sprite_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 9972.15
+        y: 9972
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -137,15 +149,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_1
+      name: player_sprite_1
       rect:
         serializedVersion: 2
         x: 525
-        y: 9972.15
+        y: 9972
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,15 +170,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_2
+      name: player_sprite_2
       rect:
         serializedVersion: 2
         x: 1050
-        y: 9972.15
+        y: 9972
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -179,15 +191,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_3
+      name: player_sprite_3
       rect:
         serializedVersion: 2
         x: 1575
-        y: 9972.15
+        y: 9972
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -200,15 +212,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_4
+      name: player_sprite_4
       rect:
         serializedVersion: 2
         x: 2100
-        y: 9972.15
+        y: 9972
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -221,15 +233,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_5
+      name: player_sprite_5
       rect:
         serializedVersion: 2
         x: 2625
-        y: 9972.15
+        y: 9972
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -242,15 +254,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_6
+      name: player_sprite_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 9448.15
+        y: 9447
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -263,15 +275,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_7
+      name: player_sprite_7
       rect:
         serializedVersion: 2
         x: 525
-        y: 9448.15
+        y: 9447
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -284,15 +296,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_8
+      name: player_sprite_8
       rect:
         serializedVersion: 2
         x: 1050
-        y: 9448.15
+        y: 9447
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -305,15 +317,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_9
+      name: player_sprite_9
       rect:
         serializedVersion: 2
         x: 1575
-        y: 9448.15
+        y: 9447
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -326,15 +338,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_10
+      name: player_sprite_10
       rect:
         serializedVersion: 2
         x: 2100
-        y: 9448.15
+        y: 9447
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -347,15 +359,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_11
+      name: player_sprite_11
       rect:
         serializedVersion: 2
         x: 2625
-        y: 9448.15
+        y: 9447
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -368,15 +380,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_12
+      name: player_sprite_12
       rect:
         serializedVersion: 2
         x: 0
-        y: 8924.15
+        y: 8922
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -389,15 +401,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_13
+      name: player_sprite_13
       rect:
         serializedVersion: 2
         x: 525
-        y: 8924.15
+        y: 8922
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -410,15 +422,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_14
+      name: player_sprite_14
       rect:
         serializedVersion: 2
         x: 1050
-        y: 8924.15
+        y: 8922
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -431,15 +443,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_15
+      name: player_sprite_15
       rect:
         serializedVersion: 2
         x: 1575
-        y: 8924.15
+        y: 8922
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -452,15 +464,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_16
+      name: player_sprite_16
       rect:
         serializedVersion: 2
         x: 2100
-        y: 8924.15
+        y: 8922
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -473,15 +485,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_17
+      name: player_sprite_17
       rect:
         serializedVersion: 2
         x: 2625
-        y: 8924.15
+        y: 8922
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -494,15 +506,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_18
+      name: player_sprite_18
       rect:
         serializedVersion: 2
         x: 0
-        y: 8400.15
+        y: 8397
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -515,15 +527,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_19
+      name: player_sprite_19
       rect:
         serializedVersion: 2
         x: 525
-        y: 8400.15
+        y: 8397
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -536,15 +548,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_20
+      name: player_sprite_20
       rect:
         serializedVersion: 2
         x: 1050
-        y: 8400.15
+        y: 8397
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -557,15 +569,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_21
+      name: player_sprite_21
       rect:
         serializedVersion: 2
         x: 1575
-        y: 8400.15
+        y: 8397
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -578,15 +590,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_22
+      name: player_sprite_22
       rect:
         serializedVersion: 2
         x: 2100
-        y: 8400.15
+        y: 8397
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -599,15 +611,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_23
+      name: player_sprite_23
       rect:
         serializedVersion: 2
         x: 2625
-        y: 8400.15
+        y: 8397
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -620,15 +632,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_24
+      name: player_sprite_24
       rect:
         serializedVersion: 2
         x: 3150
-        y: 8400.15
+        y: 8397
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -641,15 +653,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_25
+      name: player_sprite_25
       rect:
         serializedVersion: 2
         x: 3675
-        y: 8400.15
+        y: 8397
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -662,15 +674,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_26
+      name: player_sprite_26
       rect:
         serializedVersion: 2
         x: 4200
-        y: 8400.15
+        y: 8397
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -683,15 +695,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_27
+      name: player_sprite_27
       rect:
         serializedVersion: 2
         x: 0
-        y: 7876.15
+        y: 7872
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -704,15 +716,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_28
+      name: player_sprite_28
       rect:
         serializedVersion: 2
         x: 525
-        y: 7876.15
+        y: 7872
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -725,15 +737,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_29
+      name: player_sprite_29
       rect:
         serializedVersion: 2
         x: 1050
-        y: 7876.15
+        y: 7872
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -746,15 +758,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_30
+      name: player_sprite_30
       rect:
         serializedVersion: 2
         x: 1575
-        y: 7876.15
+        y: 7872
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -767,15 +779,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_31
+      name: player_sprite_31
       rect:
         serializedVersion: 2
         x: 2100
-        y: 7876.15
+        y: 7872
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -788,15 +800,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_32
+      name: player_sprite_32
       rect:
         serializedVersion: 2
         x: 2625
-        y: 7876.15
+        y: 7872
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -809,15 +821,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_33
+      name: player_sprite_33
       rect:
         serializedVersion: 2
         x: 3150
-        y: 7876.15
+        y: 7872
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -830,15 +842,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_34
+      name: player_sprite_34
       rect:
         serializedVersion: 2
         x: 3675
-        y: 7876.15
+        y: 7872
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -851,15 +863,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_35
+      name: player_sprite_35
       rect:
         serializedVersion: 2
         x: 4200
-        y: 7876.15
+        y: 7872
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -872,15 +884,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_36
+      name: player_sprite_36
       rect:
         serializedVersion: 2
         x: 0
-        y: 7352.15
+        y: 7347
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -893,15 +905,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_37
+      name: player_sprite_37
       rect:
         serializedVersion: 2
         x: 525
-        y: 7352.15
+        y: 7347
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -914,15 +926,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_38
+      name: player_sprite_38
       rect:
         serializedVersion: 2
         x: 1050
-        y: 7352.15
+        y: 7347
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -935,15 +947,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_39
+      name: player_sprite_39
       rect:
         serializedVersion: 2
         x: 1575
-        y: 7352.15
+        y: 7347
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -956,15 +968,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_40
+      name: player_sprite_40
       rect:
         serializedVersion: 2
         x: 2100
-        y: 7352.15
+        y: 7347
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -977,15 +989,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_41
+      name: player_sprite_41
       rect:
         serializedVersion: 2
         x: 2625
-        y: 7352.15
+        y: 7347
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -998,15 +1010,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_42
+      name: player_sprite_42
       rect:
         serializedVersion: 2
         x: 3150
-        y: 7352.15
+        y: 7347
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1019,15 +1031,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_43
+      name: player_sprite_43
       rect:
         serializedVersion: 2
         x: 3675
-        y: 7352.15
+        y: 7347
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1040,15 +1052,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_44
+      name: player_sprite_44
       rect:
         serializedVersion: 2
         x: 4200
-        y: 7352.15
+        y: 7347
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1061,15 +1073,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_45
+      name: player_sprite_45
       rect:
         serializedVersion: 2
         x: 0
-        y: 6828.15
+        y: 6822
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1082,15 +1094,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_46
+      name: player_sprite_46
       rect:
         serializedVersion: 2
         x: 525
-        y: 6828.15
+        y: 6822
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1103,15 +1115,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_47
+      name: player_sprite_47
       rect:
         serializedVersion: 2
         x: 1050
-        y: 6828.15
+        y: 6822
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1124,15 +1136,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_48
+      name: player_sprite_48
       rect:
         serializedVersion: 2
         x: 1575
-        y: 6828.15
+        y: 6822
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1145,15 +1157,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_49
+      name: player_sprite_49
       rect:
         serializedVersion: 2
         x: 2100
-        y: 6828.15
+        y: 6822
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1166,15 +1178,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_50
+      name: player_sprite_50
       rect:
         serializedVersion: 2
         x: 2625
-        y: 6828.15
+        y: 6822
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1187,15 +1199,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_51
+      name: player_sprite_51
       rect:
         serializedVersion: 2
         x: 3150
-        y: 6828.15
+        y: 6822
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1208,15 +1220,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_52
+      name: player_sprite_52
       rect:
         serializedVersion: 2
         x: 3675
-        y: 6828.15
+        y: 6822
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1229,15 +1241,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_53
+      name: player_sprite_53
       rect:
         serializedVersion: 2
         x: 4200
-        y: 6828.15
+        y: 6822
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1250,15 +1262,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_54
+      name: player_sprite_54
       rect:
         serializedVersion: 2
         x: 0
-        y: 6304.15
+        y: 6297
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1271,15 +1283,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_55
+      name: player_sprite_55
       rect:
         serializedVersion: 2
         x: 525
-        y: 6304.15
+        y: 6297
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1292,15 +1304,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_56
+      name: player_sprite_56
       rect:
         serializedVersion: 2
         x: 1050
-        y: 6304.15
+        y: 6297
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1313,15 +1325,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_57
+      name: player_sprite_57
       rect:
         serializedVersion: 2
         x: 1575
-        y: 6304.15
+        y: 6297
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1334,15 +1346,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_58
+      name: player_sprite_58
       rect:
         serializedVersion: 2
         x: 2100
-        y: 6304.15
+        y: 6297
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1355,15 +1367,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_59
+      name: player_sprite_59
       rect:
         serializedVersion: 2
         x: 2625
-        y: 6304.15
+        y: 6297
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1376,15 +1388,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_60
+      name: player_sprite_60
       rect:
         serializedVersion: 2
         x: 3150
-        y: 6304.15
+        y: 6297
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1397,15 +1409,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_61
+      name: player_sprite_61
       rect:
         serializedVersion: 2
         x: 3675
-        y: 6304.15
+        y: 6297
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1418,15 +1430,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_62
+      name: player_sprite_62
       rect:
         serializedVersion: 2
         x: 4200
-        y: 6304.15
+        y: 6297
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1439,15 +1451,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_63
+      name: player_sprite_63
       rect:
         serializedVersion: 2
         x: 0
-        y: 5780.15
+        y: 5772
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1460,15 +1472,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_64
+      name: player_sprite_64
       rect:
         serializedVersion: 2
         x: 525
-        y: 5780.15
+        y: 5772
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1481,15 +1493,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_65
+      name: player_sprite_65
       rect:
         serializedVersion: 2
         x: 1050
-        y: 5780.15
+        y: 5772
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1502,15 +1514,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_66
+      name: player_sprite_66
       rect:
         serializedVersion: 2
         x: 1575
-        y: 5780.15
+        y: 5772
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1523,15 +1535,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_67
+      name: player_sprite_67
       rect:
         serializedVersion: 2
         x: 2100
-        y: 5780.15
+        y: 5772
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1544,15 +1556,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_68
+      name: player_sprite_68
       rect:
         serializedVersion: 2
         x: 2625
-        y: 5780.15
+        y: 5772
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1565,15 +1577,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_69
+      name: player_sprite_69
       rect:
         serializedVersion: 2
         x: 3150
-        y: 5780.15
+        y: 5772
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1586,15 +1598,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_70
+      name: player_sprite_70
       rect:
         serializedVersion: 2
         x: 3675
-        y: 5780.15
+        y: 5772
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1607,15 +1619,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_71
+      name: player_sprite_71
       rect:
         serializedVersion: 2
         x: 4200
-        y: 5780.15
+        y: 5772
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1628,15 +1640,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_72
+      name: player_sprite_72
       rect:
         serializedVersion: 2
         x: 0
-        y: 5256.15
+        y: 5247
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1649,15 +1661,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_73
+      name: player_sprite_73
       rect:
         serializedVersion: 2
         x: 525
-        y: 5256.15
+        y: 5247
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1670,15 +1682,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_74
+      name: player_sprite_74
       rect:
         serializedVersion: 2
         x: 1050
-        y: 5256.15
+        y: 5247
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1691,15 +1703,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_75
+      name: player_sprite_75
       rect:
         serializedVersion: 2
         x: 1575
-        y: 5256.15
+        y: 5247
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1712,15 +1724,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_76
+      name: player_sprite_76
       rect:
         serializedVersion: 2
         x: 2100
-        y: 5256.15
+        y: 5247
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1733,15 +1745,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_77
+      name: player_sprite_77
       rect:
         serializedVersion: 2
         x: 2625
-        y: 5256.15
+        y: 5247
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1754,15 +1766,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_78
+      name: player_sprite_78
       rect:
         serializedVersion: 2
         x: 3150
-        y: 5256.15
+        y: 5247
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1775,15 +1787,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_79
+      name: player_sprite_79
       rect:
         serializedVersion: 2
         x: 3675
-        y: 5256.15
+        y: 5247
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1796,15 +1808,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_80
+      name: player_sprite_80
       rect:
         serializedVersion: 2
         x: 4200
-        y: 5256.15
+        y: 5247
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1817,15 +1829,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_81
+      name: player_sprite_81
       rect:
         serializedVersion: 2
         x: 0
-        y: 4732.15
+        y: 4722
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1838,15 +1850,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_82
+      name: player_sprite_82
       rect:
         serializedVersion: 2
         x: 525
-        y: 4732.15
+        y: 4722
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1859,15 +1871,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_83
+      name: player_sprite_83
       rect:
         serializedVersion: 2
         x: 1050
-        y: 4732.15
+        y: 4722
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1880,15 +1892,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_84
+      name: player_sprite_84
       rect:
         serializedVersion: 2
         x: 1575
-        y: 4732.15
+        y: 4722
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1901,15 +1913,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_85
+      name: player_sprite_85
       rect:
         serializedVersion: 2
         x: 2100
-        y: 4732.15
+        y: 4722
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1922,15 +1934,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_86
+      name: player_sprite_86
       rect:
         serializedVersion: 2
         x: 2625
-        y: 4732.15
+        y: 4722
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1943,15 +1955,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_87
+      name: player_sprite_87
       rect:
         serializedVersion: 2
         x: 3150
-        y: 4732.15
+        y: 4722
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1964,15 +1976,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_88
+      name: player_sprite_88
       rect:
         serializedVersion: 2
         x: 3675
-        y: 4732.15
+        y: 4722
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1985,15 +1997,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_89
+      name: player_sprite_89
       rect:
         serializedVersion: 2
         x: 4200
-        y: 4732.15
+        y: 4722
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2006,15 +2018,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_90
+      name: player_sprite_90
       rect:
         serializedVersion: 2
         x: 0
-        y: 4208.15
+        y: 4197
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2027,15 +2039,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_91
+      name: player_sprite_91
       rect:
         serializedVersion: 2
         x: 525
-        y: 4208.15
+        y: 4197
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2048,15 +2060,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_92
+      name: player_sprite_92
       rect:
         serializedVersion: 2
         x: 1050
-        y: 4208.15
+        y: 4197
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2069,15 +2081,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_93
+      name: player_sprite_93
       rect:
         serializedVersion: 2
         x: 1575
-        y: 4208.15
+        y: 4197
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2090,15 +2102,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_94
+      name: player_sprite_94
       rect:
         serializedVersion: 2
         x: 2100
-        y: 4208.15
+        y: 4197
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2111,15 +2123,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_95
+      name: player_sprite_95
       rect:
         serializedVersion: 2
         x: 2625
-        y: 4208.15
+        y: 4197
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2132,15 +2144,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_96
+      name: player_sprite_96
       rect:
         serializedVersion: 2
         x: 3150
-        y: 4208.15
+        y: 4197
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2153,15 +2165,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_97
+      name: player_sprite_97
       rect:
         serializedVersion: 2
         x: 3675
-        y: 4208.15
+        y: 4197
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2174,15 +2186,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_98
+      name: player_sprite_98
       rect:
         serializedVersion: 2
         x: 4200
-        y: 4208.15
+        y: 4197
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2195,15 +2207,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_99
+      name: player_sprite_99
       rect:
         serializedVersion: 2
         x: 0
-        y: 3684.15
+        y: 3672
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2216,15 +2228,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_100
+      name: player_sprite_100
       rect:
         serializedVersion: 2
         x: 525
-        y: 3684.15
+        y: 3672
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2237,15 +2249,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_101
+      name: player_sprite_101
       rect:
         serializedVersion: 2
         x: 1050
-        y: 3684.15
+        y: 3672
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2258,15 +2270,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_102
+      name: player_sprite_102
       rect:
         serializedVersion: 2
         x: 1575
-        y: 3684.15
+        y: 3672
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2279,15 +2291,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_103
+      name: player_sprite_103
       rect:
         serializedVersion: 2
         x: 2100
-        y: 3684.15
+        y: 3672
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2300,15 +2312,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_104
+      name: player_sprite_104
       rect:
         serializedVersion: 2
         x: 2625
-        y: 3684.15
+        y: 3672
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2321,15 +2333,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_105
+      name: player_sprite_105
       rect:
         serializedVersion: 2
         x: 3150
-        y: 3684.15
+        y: 3672
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2342,15 +2354,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_106
+      name: player_sprite_106
       rect:
         serializedVersion: 2
         x: 3675
-        y: 3684.15
+        y: 3672
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2363,15 +2375,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_107
+      name: player_sprite_107
       rect:
         serializedVersion: 2
         x: 4200
-        y: 3684.15
+        y: 3672
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2384,15 +2396,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_108
+      name: player_sprite_108
       rect:
         serializedVersion: 2
         x: 0
-        y: 3160.15
+        y: 3147
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2405,15 +2417,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_109
+      name: player_sprite_109
       rect:
         serializedVersion: 2
         x: 525
-        y: 3160.15
+        y: 3147
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2426,15 +2438,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_110
+      name: player_sprite_110
       rect:
         serializedVersion: 2
         x: 1050
-        y: 3160.15
+        y: 3147
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2447,15 +2459,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_111
+      name: player_sprite_111
       rect:
         serializedVersion: 2
         x: 1575
-        y: 3160.15
+        y: 3147
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2468,15 +2480,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_112
+      name: player_sprite_112
       rect:
         serializedVersion: 2
         x: 2100
-        y: 3160.15
+        y: 3147
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2489,15 +2501,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_113
+      name: player_sprite_113
       rect:
         serializedVersion: 2
         x: 2625
-        y: 3160.15
+        y: 3147
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2510,15 +2522,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_114
+      name: player_sprite_114
       rect:
         serializedVersion: 2
         x: 3150
-        y: 3160.15
+        y: 3147
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2531,15 +2543,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_115
+      name: player_sprite_115
       rect:
         serializedVersion: 2
         x: 3675
-        y: 3160.15
+        y: 3147
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2552,15 +2564,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_116
+      name: player_sprite_116
       rect:
         serializedVersion: 2
         x: 4200
-        y: 3160.15
+        y: 3147
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2573,15 +2585,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_117
+      name: player_sprite_117
       rect:
         serializedVersion: 2
         x: 0
-        y: 2636.15
+        y: 2622
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2594,15 +2606,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_118
+      name: player_sprite_118
       rect:
         serializedVersion: 2
         x: 525
-        y: 2636.15
+        y: 2622
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2615,15 +2627,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_119
+      name: player_sprite_119
       rect:
         serializedVersion: 2
         x: 1050
-        y: 2636.15
+        y: 2622
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2636,15 +2648,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_120
+      name: player_sprite_120
       rect:
         serializedVersion: 2
         x: 1575
-        y: 2636.15
+        y: 2622
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2657,15 +2669,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_121
+      name: player_sprite_121
       rect:
         serializedVersion: 2
         x: 2100
-        y: 2636.15
+        y: 2622
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2678,15 +2690,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_122
+      name: player_sprite_122
       rect:
         serializedVersion: 2
         x: 2625
-        y: 2636.15
+        y: 2622
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2699,15 +2711,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_123
+      name: player_sprite_123
       rect:
         serializedVersion: 2
         x: 3150
-        y: 2636.15
+        y: 2622
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2720,15 +2732,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_124
+      name: player_sprite_124
       rect:
         serializedVersion: 2
         x: 3675
-        y: 2636.15
+        y: 2622
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2741,15 +2753,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_125
+      name: player_sprite_125
       rect:
         serializedVersion: 2
         x: 4200
-        y: 2636.15
+        y: 2622
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2762,15 +2774,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_126
+      name: player_sprite_126
       rect:
         serializedVersion: 2
         x: 0
-        y: 2112.15
+        y: 2097
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2783,15 +2795,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_127
+      name: player_sprite_127
       rect:
         serializedVersion: 2
         x: 525
-        y: 2112.15
+        y: 2097
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2804,15 +2816,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_128
+      name: player_sprite_128
       rect:
         serializedVersion: 2
         x: 1050
-        y: 2112.15
+        y: 2097
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2825,15 +2837,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_129
+      name: player_sprite_129
       rect:
         serializedVersion: 2
         x: 1575
-        y: 2112.15
+        y: 2097
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2846,15 +2858,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_130
+      name: player_sprite_130
       rect:
         serializedVersion: 2
         x: 2100
-        y: 2112.15
+        y: 2097
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2867,15 +2879,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_131
+      name: player_sprite_131
       rect:
         serializedVersion: 2
         x: 2625
-        y: 2112.15
+        y: 2097
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2888,15 +2900,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_132
+      name: player_sprite_132
       rect:
         serializedVersion: 2
         x: 3150
-        y: 2112.15
+        y: 2097
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2909,15 +2921,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_133
+      name: player_sprite_133
       rect:
         serializedVersion: 2
         x: 3675
-        y: 2112.15
+        y: 2097
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2930,15 +2942,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_134
+      name: player_sprite_134
       rect:
         serializedVersion: 2
         x: 4200
-        y: 2112.15
+        y: 2097
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2951,15 +2963,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_135
+      name: player_sprite_135
       rect:
         serializedVersion: 2
         x: 0
-        y: 1588.15
+        y: 1572
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2972,15 +2984,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_136
+      name: player_sprite_136
       rect:
         serializedVersion: 2
         x: 525
-        y: 1588.15
+        y: 1572
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2993,15 +3005,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_137
+      name: player_sprite_137
       rect:
         serializedVersion: 2
         x: 1050
-        y: 1588.15
+        y: 1572
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3014,15 +3026,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_138
+      name: player_sprite_138
       rect:
         serializedVersion: 2
         x: 1575
-        y: 1588.15
+        y: 1572
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3035,15 +3047,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_139
+      name: player_sprite_139
       rect:
         serializedVersion: 2
         x: 2100
-        y: 1588.15
+        y: 1572
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3056,15 +3068,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_140
+      name: player_sprite_140
       rect:
         serializedVersion: 2
         x: 2625
-        y: 1588.15
+        y: 1572
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3077,15 +3089,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_141
+      name: player_sprite_141
       rect:
         serializedVersion: 2
         x: 3150
-        y: 1588.15
+        y: 1572
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3098,15 +3110,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_142
+      name: player_sprite_142
       rect:
         serializedVersion: 2
         x: 3675
-        y: 1588.15
+        y: 1572
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3119,15 +3131,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_143
+      name: player_sprite_143
       rect:
         serializedVersion: 2
         x: 4200
-        y: 1588.15
+        y: 1572
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3140,15 +3152,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_144
+      name: player_sprite_144
       rect:
         serializedVersion: 2
         x: 0
-        y: 1064.15
+        y: 1047
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3161,15 +3173,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_145
+      name: player_sprite_145
       rect:
         serializedVersion: 2
         x: 525
-        y: 1064.15
+        y: 1047
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3182,15 +3194,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_146
+      name: player_sprite_146
       rect:
         serializedVersion: 2
         x: 1050
-        y: 1064.15
+        y: 1047
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3203,15 +3215,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_147
+      name: player_sprite_147
       rect:
         serializedVersion: 2
         x: 1575
-        y: 1064.15
+        y: 1047
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3224,15 +3236,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_148
+      name: player_sprite_148
       rect:
         serializedVersion: 2
         x: 2100
-        y: 1064.15
+        y: 1047
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3245,15 +3257,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_149
+      name: player_sprite_149
       rect:
         serializedVersion: 2
         x: 2625
-        y: 1064.15
+        y: 1047
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3266,15 +3278,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_150
+      name: player_sprite_150
       rect:
         serializedVersion: 2
         x: 3150
-        y: 1064.15
+        y: 1047
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3287,15 +3299,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_151
+      name: player_sprite_151
       rect:
         serializedVersion: 2
         x: 3675
-        y: 1064.15
+        y: 1047
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3308,15 +3320,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_152
+      name: player_sprite_152
       rect:
         serializedVersion: 2
         x: 4200
-        y: 1064.15
+        y: 1047
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3329,15 +3341,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_153
+      name: player_sprite_153
       rect:
         serializedVersion: 2
         x: 0
-        y: 540.15
+        y: 522
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3350,15 +3362,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_154
+      name: player_sprite_154
       rect:
         serializedVersion: 2
         x: 525
-        y: 540.15
+        y: 522
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3371,15 +3383,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_155
+      name: player_sprite_155
       rect:
         serializedVersion: 2
         x: 1050
-        y: 540.15
+        y: 522
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3392,15 +3404,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_156
+      name: player_sprite_156
       rect:
         serializedVersion: 2
         x: 1575
-        y: 540.15
+        y: 522
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3413,15 +3425,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_157
+      name: player_sprite_157
       rect:
         serializedVersion: 2
         x: 2100
-        y: 540.15
+        y: 522
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3434,15 +3446,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_158
+      name: player_sprite_158
       rect:
         serializedVersion: 2
         x: 2625
-        y: 540.15
+        y: 522
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3455,15 +3467,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_159
+      name: player_sprite_159
       rect:
         serializedVersion: 2
         x: 3150
-        y: 540.15
+        y: 522
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3476,15 +3488,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_160
+      name: player_sprite_160
       rect:
         serializedVersion: 2
         x: 3675
-        y: 540.15
+        y: 522
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3497,15 +3509,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_161
+      name: player_sprite_161
       rect:
         serializedVersion: 2
         x: 4200
-        y: 540.15
+        y: 522
         width: 525
-        height: 524.85
+        height: 525
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3518,15 +3530,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A1FullSpritesheet 1_162
+      name: player_sprite_162
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16.150024
-        width: 525
-        height: 524.85
+        x: 15
+        y: 16
+        width: 510
+        height: 504
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3549,169 +3561,169 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      A1FullSpritesheet 1_27: 1197576769
-      A1FullSpritesheet 1_147: -229218739
-      A1FullSpritesheet 1_104: -1499046634
-      A1FullSpritesheet 1_144: 1496112208
-      A1FullSpritesheet 1_125: 360838920
-      A1FullSpritesheet 1_102: 1630050248
-      A1FullSpritesheet 1_35: -2024945921
-      A1FullSpritesheet 1_123: 1637075159
-      A1FullSpritesheet 1_136: -291111867
-      A1FullSpritesheet 1_17: 1814318403
-      A1FullSpritesheet 1_117: -1473315735
-      A1FullSpritesheet 1_139: 1075407023
-      A1FullSpritesheet 1_39: 174037087
-      A1FullSpritesheet 1_37: -882355163
-      A1FullSpritesheet 1_57: 1839724765
-      A1FullSpritesheet 1_74: -1319148353
-      A1FullSpritesheet 1_10: -1520990884
-      A1FullSpritesheet 1_91: -1703051922
-      A1FullSpritesheet 1_68: -291664999
-      A1FullSpritesheet 1_110: -516271100
-      A1FullSpritesheet 1_124: 1385313197
-      A1FullSpritesheet 1_107: -1707900745
-      A1FullSpritesheet 1_15: -586853462
-      A1FullSpritesheet 1_105: -1347653040
-      A1FullSpritesheet 1_111: 855486664
-      A1FullSpritesheet 1_34: 113194209
-      A1FullSpritesheet 1_56: -19006409
-      A1FullSpritesheet 1_92: -1274979950
-      A1FullSpritesheet 1_8: 944211803
-      A1FullSpritesheet 1_115: 1927410660
-      A1FullSpritesheet 1_6: -846712930
-      A1FullSpritesheet 1_31: -2098368303
-      A1FullSpritesheet 1_13: 594655
-      A1FullSpritesheet 1_5: -1896137611
-      A1FullSpritesheet 1_83: -2108683065
-      A1FullSpritesheet 1_53: -1609993646
-      A1FullSpritesheet 1_38: 1308479200
-      A1FullSpritesheet 1_51: 1521450787
-      A1FullSpritesheet 1_12: -2014688504
-      A1FullSpritesheet 1_122: 1103094755
-      A1FullSpritesheet 1_162: 2102582732
-      A1FullSpritesheet 1_78: -1198855223
-      A1FullSpritesheet 1_30: 2070426351
-      A1FullSpritesheet 1_126: -1476387219
-      A1FullSpritesheet 1_72: -922317133
-      A1FullSpritesheet 1_106: -2061056413
-      A1FullSpritesheet 1_140: 404278791
-      A1FullSpritesheet 1_88: -955107269
-      A1FullSpritesheet 1_108: -1686540179
-      A1FullSpritesheet 1_145: -1326107951
-      A1FullSpritesheet 1_154: 998256441
-      A1FullSpritesheet 1_103: 1728827281
-      A1FullSpritesheet 1_130: -1099063515
-      A1FullSpritesheet 1_113: -235510564
-      A1FullSpritesheet 1_87: -402435958
-      A1FullSpritesheet 1_9: -872531042
-      A1FullSpritesheet 1_155: -1432601418
-      A1FullSpritesheet 1_65: -1932250574
-      A1FullSpritesheet 1_7: -990131803
-      A1FullSpritesheet 1_148: 1501476495
-      A1FullSpritesheet 1_26: -160748471
-      A1FullSpritesheet 1_156: 667260430
-      A1FullSpritesheet 1_28: -342082290
-      A1FullSpritesheet 1_159: 1317526627
-      A1FullSpritesheet 1_81: 1142042547
-      A1FullSpritesheet 1_82: -694279191
-      A1FullSpritesheet 1_86: 1837042112
-      A1FullSpritesheet 1_142: 1020639755
-      A1FullSpritesheet 1_97: -1506779144
-      A1FullSpritesheet 1_112: -1322407364
-      A1FullSpritesheet 1_0: 1318239731
-      A1FullSpritesheet 1_99: -1517069049
-      A1FullSpritesheet 1_45: 744488838
-      A1FullSpritesheet 1_158: -865788806
-      A1FullSpritesheet 1_90: 2130972794
-      A1FullSpritesheet 1_98: 500363519
-      A1FullSpritesheet 1_96: -696325686
-      A1FullSpritesheet 1_150: 802413756
-      A1FullSpritesheet 1_152: -222845744
-      A1FullSpritesheet 1_84: 1039967768
-      A1FullSpritesheet 1_133: -1999233449
-      A1FullSpritesheet 1_14: -294002527
-      A1FullSpritesheet 1_55: 985573942
-      A1FullSpritesheet 1_129: -343671549
-      A1FullSpritesheet 1_116: 1757265233
-      A1FullSpritesheet 1_58: 270944500
-      A1FullSpritesheet 1_137: -155089822
-      A1FullSpritesheet 1_46: 1318797044
-      A1FullSpritesheet 1_149: -198396096
-      A1FullSpritesheet 1_40: 443176891
-      A1FullSpritesheet 1_41: 662711830
-      A1FullSpritesheet 1_141: 1979564736
-      A1FullSpritesheet 1_121: 1600928545
-      A1FullSpritesheet 1_4: 366532754
-      A1FullSpritesheet 1_63: 911502019
-      A1FullSpritesheet 1_161: 1947631711
-      A1FullSpritesheet 1_42: 1874379413
-      A1FullSpritesheet 1_153: -1072675554
-      A1FullSpritesheet 1_95: 438828486
-      A1FullSpritesheet 1_93: 1188065270
-      A1FullSpritesheet 1_73: 1382154573
-      A1FullSpritesheet 1_11: -859045353
-      A1FullSpritesheet 1_24: -2106063963
-      A1FullSpritesheet 1_128: 1336364019
-      A1FullSpritesheet 1_109: 439098316
-      A1FullSpritesheet 1_151: 1214194823
-      A1FullSpritesheet 1_157: -1905390789
-      A1FullSpritesheet 1_48: 665595150
-      A1FullSpritesheet 1_21: -695991133
-      A1FullSpritesheet 1_52: -43271752
-      A1FullSpritesheet 1_131: 520534464
-      A1FullSpritesheet 1_60: -1331219287
-      A1FullSpritesheet 1_18: 1601264
-      A1FullSpritesheet 1_49: 809529359
-      A1FullSpritesheet 1_71: -1528506945
-      A1FullSpritesheet 1_61: 1538839419
-      A1FullSpritesheet 1_127: 278657075
-      A1FullSpritesheet 1_89: 704804421
-      A1FullSpritesheet 1_47: -1508768101
-      A1FullSpritesheet 1_44: -1579793356
-      A1FullSpritesheet 1_62: -396488672
-      A1FullSpritesheet 1_54: -1343613018
-      A1FullSpritesheet 1_79: -1803734247
-      A1FullSpritesheet 1_1: 1416968480
-      A1FullSpritesheet 1_77: -648596652
-      A1FullSpritesheet 1_146: -1357353776
-      A1FullSpritesheet 1_114: 1854719038
-      A1FullSpritesheet 1_75: -1554115661
-      A1FullSpritesheet 1_36: -7372413
-      A1FullSpritesheet 1_22: -1746743078
-      A1FullSpritesheet 1_2: 1984941376
-      A1FullSpritesheet 1_3: 493661989
-      A1FullSpritesheet 1_20: -1209588432
-      A1FullSpritesheet 1_66: -1775329637
-      A1FullSpritesheet 1_29: 1927843325
-      A1FullSpritesheet 1_76: 1399635878
-      A1FullSpritesheet 1_119: 344301579
-      A1FullSpritesheet 1_67: -949593696
-      A1FullSpritesheet 1_134: -1835756532
-      A1FullSpritesheet 1_132: 1069248891
-      A1FullSpritesheet 1_50: 484480211
-      A1FullSpritesheet 1_59: 1924989147
-      A1FullSpritesheet 1_143: -1403501320
-      A1FullSpritesheet 1_138: 1764558440
-      A1FullSpritesheet 1_16: -103014223
-      A1FullSpritesheet 1_19: 1253171064
-      A1FullSpritesheet 1_80: -1106639502
-      A1FullSpritesheet 1_43: -1764589039
-      A1FullSpritesheet 1_69: 514922908
-      A1FullSpritesheet 1_101: -415321306
-      A1FullSpritesheet 1_32: 1131071918
-      A1FullSpritesheet 1_120: 31390782
-      A1FullSpritesheet 1_135: 711116895
-      A1FullSpritesheet 1_160: -192028344
-      A1FullSpritesheet 1_33: -267301756
-      A1FullSpritesheet 1_64: -444820764
-      A1FullSpritesheet 1_94: 596920951
-      A1FullSpritesheet 1_70: 243000612
-      A1FullSpritesheet 1_100: -335219942
-      A1FullSpritesheet 1_25: 1322909091
-      A1FullSpritesheet 1_23: 1792067786
-      A1FullSpritesheet 1_118: 668826700
-      A1FullSpritesheet 1_85: -1456835016
+      player_sprite_55: 985573942
+      player_sprite_5: -1896137611
+      player_sprite_99: -1517069049
+      player_sprite_30: 2070426351
+      player_sprite_24: -2106063963
+      player_sprite_137: -155089822
+      player_sprite_103: 1728827281
+      player_sprite_138: 1764558440
+      player_sprite_0: 1318239731
+      player_sprite_96: -696325686
+      player_sprite_67: -949593696
+      player_sprite_27: 1197576769
+      player_sprite_139: 1075407023
+      player_sprite_126: -1476387219
+      player_sprite_95: 438828486
+      player_sprite_79: -1803734247
+      player_sprite_68: -291664999
+      player_sprite_98: 500363519
+      player_sprite_60: -1331219287
+      player_sprite_57: 1839724765
+      player_sprite_22: -1746743078
+      player_sprite_101: -415321306
+      player_sprite_62: -396488672
+      player_sprite_142: 1020639755
+      player_sprite_83: -2108683065
+      player_sprite_12: -2014688504
+      player_sprite_10: -1520990884
+      player_sprite_7: -990131803
+      player_sprite_16: -103014223
+      player_sprite_124: 1385313197
+      player_sprite_156: 667260430
+      player_sprite_40: 443176891
+      player_sprite_11: -859045353
+      player_sprite_109: 439098316
+      player_sprite_39: 174037087
+      player_sprite_74: -1319148353
+      player_sprite_53: -1609993646
+      player_sprite_54: -1343613018
+      player_sprite_18: 1601264
+      player_sprite_84: 1039967768
+      player_sprite_141: 1979564736
+      player_sprite_131: 520534464
+      player_sprite_33: -267301756
+      player_sprite_19: 1253171064
+      player_sprite_161: 1947631711
+      player_sprite_4: 366532754
+      player_sprite_104: -1499046634
+      player_sprite_56: -19006409
+      player_sprite_97: -1506779144
+      player_sprite_125: 360838920
+      player_sprite_70: 243000612
+      player_sprite_48: 665595150
+      player_sprite_108: -1686540179
+      player_sprite_159: 1317526627
+      player_sprite_66: -1775329637
+      player_sprite_58: 270944500
+      player_sprite_90: 2130972794
+      player_sprite_85: -1456835016
+      player_sprite_49: 809529359
+      player_sprite_102: 1630050248
+      player_sprite_38: 1308479200
+      player_sprite_115: 1927410660
+      player_sprite_71: -1528506945
+      player_sprite_129: -343671549
+      player_sprite_123: 1637075159
+      player_sprite_41: 662711830
+      player_sprite_153: -1072675554
+      player_sprite_148: 1501476495
+      player_sprite_113: -235510564
+      player_sprite_134: -1835756532
+      player_sprite_94: 596920951
+      player_sprite_80: -1106639502
+      player_sprite_46: 1318797044
+      player_sprite_106: -2061056413
+      player_sprite_93: 1188065270
+      player_sprite_154: 998256441
+      player_sprite_77: -648596652
+      player_sprite_45: 744488838
+      player_sprite_120: 31390782
+      player_sprite_116: 1757265233
+      player_sprite_78: -1198855223
+      player_sprite_158: -865788806
+      player_sprite_34: 113194209
+      player_sprite_117: -1473315735
+      player_sprite_51: 1521450787
+      player_sprite_130: -1099063515
+      player_sprite_73: 1382154573
+      player_sprite_140: 404278791
+      player_sprite_149: -198396096
+      player_sprite_121: 1600928545
+      player_sprite_50: 484480211
+      player_sprite_105: -1347653040
+      player_sprite_110: -516271100
+      player_sprite_23: 1792067786
+      player_sprite_150: 802413756
+      player_sprite_92: -1274979950
+      player_sprite_37: -882355163
+      player_sprite_147: -229218739
+      player_sprite_64: -444820764
+      player_sprite_1: 1416968480
+      player_sprite_143: -1403501320
+      player_sprite_132: 1069248891
+      player_sprite_118: 668826700
+      player_sprite_122: 1103094755
+      player_sprite_157: -1905390789
+      player_sprite_127: 278657075
+      player_sprite_20: -1209588432
+      player_sprite_146: -1357353776
+      player_sprite_47: -1508768101
+      player_sprite_44: -1579793356
+      player_sprite_61: 1538839419
+      player_sprite_35: -2024945921
+      player_sprite_43: -1764589039
+      player_sprite_162: 2102582732
+      player_sprite_26: -160748471
+      player_sprite_75: -1554115661
+      player_sprite_91: -1703051922
+      player_sprite_36: -7372413
+      player_sprite_86: 1837042112
+      player_sprite_155: -1432601418
+      player_sprite_3: 493661989
+      player_sprite_151: 1214194823
+      player_sprite_15: -586853462
+      player_sprite_59: 1924989147
+      player_sprite_6: -846712930
+      player_sprite_88: -955107269
+      player_sprite_69: 514922908
+      player_sprite_14: -294002527
+      player_sprite_145: -1326107951
+      player_sprite_82: -694279191
+      player_sprite_65: -1932250574
+      player_sprite_87: -402435958
+      player_sprite_2: 1984941376
+      player_sprite_128: 1336364019
+      player_sprite_112: -1322407364
+      player_sprite_136: -291111867
+      player_sprite_21: -695991133
+      player_sprite_107: -1707900745
+      player_sprite_42: 1874379413
+      player_sprite_17: 1814318403
+      player_sprite_8: 944211803
+      player_sprite_81: 1142042547
+      player_sprite_28: -342082290
+      player_sprite_144: 1496112208
+      player_sprite_52: -43271752
+      player_sprite_152: -222845744
+      player_sprite_114: 1854719038
+      player_sprite_119: 344301579
+      player_sprite_133: -1999233449
+      player_sprite_13: 594655
+      player_sprite_25: 1322909091
+      player_sprite_111: 855486664
+      player_sprite_32: 1131071918
+      player_sprite_135: 711116895
+      player_sprite_100: -335219942
+      player_sprite_63: 911502019
+      player_sprite_72: -922317133
+      player_sprite_160: -192028344
+      player_sprite_31: -2098368303
+      player_sprite_9: -872531042
+      player_sprite_29: 1927843325
+      player_sprite_89: 704804421
+      player_sprite_76: 1399635878
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
