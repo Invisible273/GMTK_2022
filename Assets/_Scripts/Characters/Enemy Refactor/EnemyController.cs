@@ -21,7 +21,11 @@ namespace GMTK2022
 
         void Update() {
             directionToPlayer = GetDirectionToPlayer();
-            EnemyMovement();
+            if(player)
+            {
+                EnemyMovement();
+            }
+            
         }
 
         private Vector2 GetDirectionToPlayer() {
@@ -44,7 +48,7 @@ namespace GMTK2022
             while(true) {
 
                 Vector2 shootDir = GetDirectionToPlayer();
-                if(CanShoot(fieldLayer)) {
+                if(CanShoot(fieldLayer) && player) {
                     RotateToTarget(player.transform.position);
                     ShootInDirection(shootDir);
                 }

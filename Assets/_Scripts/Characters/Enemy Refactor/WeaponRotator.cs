@@ -1,12 +1,16 @@
+using System;
 using UnityEngine;
 
 namespace GMTK2022
 {
     public class WeaponRotator : MonoBehaviour
     {
+            
+
         private float lastRotationAngle = 0.0f;
 
-        public void Rotate2Target(Vector3 targetPos) {
+        public void Rotate2Target(Vector3 targetPos)
+        {
             Vector3 difference = targetPos - transform.position;
             difference.Normalize();
             float rotationAngle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;

@@ -24,7 +24,8 @@ namespace GMTK2022
         }
 
         protected virtual void OnTargetUpdate(Vector3 targetTransform) {
-            weaponRotator.Rotate2Target(targetTransform);
+            
+           //weaponRotator.Rotate2Target(targetTransform);
         }
 
         protected void HandleMovement() {

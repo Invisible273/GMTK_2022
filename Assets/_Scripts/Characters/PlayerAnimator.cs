@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System;
 
 namespace GMTK2022
 {
@@ -8,6 +9,8 @@ namespace GMTK2022
         private Animator _animator;
         [SerializeField] private Player _player;
         [SerializeField] private PlayerController _playerController;
+        [SerializeField] WeaponRotator _weaponRotator;
+        
 
         public AnimationClip attackClip;
 
@@ -16,6 +19,8 @@ namespace GMTK2022
         private bool _isRolling;
         private bool _isAttacking;
         private bool _isDead;
+        public static event Action onAttackStarted;
+        public static event Action onAttackEnded;
 
         private void Awake() {
             _animator = GetComponent<Animator>();
@@ -79,9 +84,12 @@ namespace GMTK2022
             _isRolling = false;
         }
 
-        private void AttackStarted() {
+        private void AttackStarted() 
+        {
+            
             Vector3 mouseVector = _lastMouseInput - transform.position;
             mouseVector.Normalize();
+            _weaponRotator.Rotate2Target(_lastMouseInput);
             _animator.SetFloat("attackX", mouseVector.x);
             _animator.SetFloat("attackY", mouseVector.y);
 
@@ -90,7 +98,9 @@ namespace GMTK2022
 
         private IEnumerator WaitForAttackAnimation(float duration) {
             _isAttacking = true;
+            onAttackStarted?.Invoke();
             yield return new WaitForSeconds(duration);
+            onAttackEnded?.Invoke();
             _isAttacking = false;
         }
 

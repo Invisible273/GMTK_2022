@@ -5,10 +5,11 @@ namespace GMTK2022
 {
     public class Projectile : MonoBehaviour
     {
-        [SerializeField] float speed = 100f;
+        [SerializeField] float speed = 750f;
         [SerializeField] float lifetime = 5f;
         [SerializeField] Characters target;
         [SerializeField] float damage = 10f;
+        bool isDeflected = false;
         Vector2 direction;
         private Rigidbody2D rb;
         Vector3 lastVelocity;
@@ -39,11 +40,11 @@ namespace GMTK2022
         }
 
         void MoveTowardsTarget() {
-            if(direction != null && !started) {
-                rb.AddForce(new Vector2(direction.x * speed * Time.deltaTime, direction.y * speed * Time.deltaTime));
-                started = true;
-                //GetComponent<Rigidbody2D>().velocity = direction * speed * Time.deltaTime;
-            }
+            // if(direction != null && !started) {
+            //     rb.AddForce(new Vector2(direction.x * speed * Time.deltaTime, direction.y * speed * Time.deltaTime));
+            //     started = true;
+                GetComponent<Rigidbody2D>().velocity = direction * speed * Time.deltaTime;
+            // }
         }
 
         IEnumerator WaitAndDisable() {
@@ -56,15 +57,28 @@ namespace GMTK2022
                 Health tHealth = other.GetComponent<Health>();
                 if(tHealth) {
                     other.GetComponent<Health>().GetDamaged(damage);
+                    Destroy(gameObject);
                 }
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D collision) {
-            //print(collision.gameObject.layer);
-            var speed = lastVelocity.magnitude;
-            var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
-            rb.velocity = direction * Mathf.Max(speed, 0f);
+        // private void OnCollisionEnter2D(Collision2D collision) {
+        //     //print(collision.gameObject.layer);
+        //     var speed = lastVelocity.magnitude;
+        //     var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+        //     rb.velocity = direction * Mathf.Max(speed, 0f);
+        // }
+
+        public void GetDeflected()
+        {
+            if(!isDeflected)
+            {
+                Vector3 curVelocity = GetComponent<Rigidbody2D>().velocity;
+                SetDirection(-curVelocity);
+                target = Characters.Enemy;
+                isDeflected = true;
+            }
+            
         }
 
     }

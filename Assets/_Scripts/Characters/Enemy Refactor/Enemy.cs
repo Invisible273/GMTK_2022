@@ -34,6 +34,11 @@ namespace GMTK2022
             HandleMovement();
         }
 
+        public void Die()
+        {
+            Destroy(gameObject);
+        }
+
         private void OnDestroy() {
             GameplayManager.instance.AddScore(enemyValue);
         }
