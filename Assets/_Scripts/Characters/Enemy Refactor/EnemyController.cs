@@ -10,6 +10,7 @@ namespace GMTK2022
         [SerializeField] LayerMask fieldLayer;
         GameObject player = null;
         Collider2D myCol;
+        Health eHealth = null;
 
         Vector2 directionToPlayer;
 
@@ -57,6 +58,7 @@ namespace GMTK2022
             }
         }
 
+       
         private bool CanShoot(LayerMask layer) {
             int fLayer = layer.value;
 

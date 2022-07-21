@@ -11,7 +11,8 @@ namespace GMTK2022
         [SerializeField] private LayerMask collisionLayerMask;
         [SerializeField] private float maxRollSpeed;
         [SerializeField] private float rollSpeedDecay;
-
+        
+        
         private PlayerController playerController;
         private float currentRollSpeed;
         private Vector3 currentRollDir;
@@ -29,12 +30,12 @@ namespace GMTK2022
 
         protected override void Awake() {
             base.Awake();
+           
             playerController = GetComponent<PlayerController>();
 
             playerController.onMovementInput += OnDirectionRecieved;
             playerController.onRollInput += OnRollInputRecieved;
-            playerController.onMousePositionUpdate += OnTargetUpdate;
-
+            playerController.onMousePositionUpdate += OnTargetUpdate; 
             state = State.Normal;
         }
 
@@ -58,6 +59,8 @@ namespace GMTK2022
                     break;
             }
         }
+
+        
 
         private void HandleRolling() {
             debugRollTime += Time.fixedDeltaTime;

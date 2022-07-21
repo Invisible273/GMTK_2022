@@ -10,6 +10,7 @@ namespace GMTK2022
         [SerializeField] private Player _player;
         [SerializeField] private PlayerController _playerController;
         [SerializeField] WeaponRotator _weaponRotator;
+        Health _playerHealth = null;
         
 
         public AnimationClip attackClip;
@@ -30,6 +31,12 @@ namespace GMTK2022
             _isRolling = false;
             _isAttacking = false;
             _isDead = false;
+            _playerHealth = _player.GetComponent<Health>();
+            if (_playerHealth)
+            {
+               _playerHealth.onDeath += DeathTriggered;
+            }
+            
         }
 
         private void OnEnable() {
@@ -38,6 +45,7 @@ namespace GMTK2022
             _playerController.OnAttackInput += AttackStarted;
             _player.OnRoll += RollingStarted;
             _player.OnRollEnd += RollingComplete;
+            
         }
 
         private void OnDisable() {
@@ -46,6 +54,7 @@ namespace GMTK2022
             _playerController.OnAttackInput -= AttackStarted;
             _player.OnRoll -= RollingStarted;
             _player.OnRollEnd -= RollingComplete;
+           
         }
 
         private void Update() {
@@ -115,6 +124,13 @@ namespace GMTK2022
             if(_isRolling) return Roll;
             return _lastMovementInput == Vector2.zero ? Idle : Walk;
         }
+        //animation events
+        void Die()
+        {
+            _playerHealth.onDeath -= DeathTriggered;
+            
+            Destroy(_player.gameObject);
+        }
 
         #region Cached Properties
 
@@ -124,7 +140,7 @@ namespace GMTK2022
         private static readonly int Walk = Animator.StringToHash("Walk Blend Tree");
         private static readonly int Roll = Animator.StringToHash("Roll Blend Tree");
         private static readonly int Attack = Animator.StringToHash("Attack Blend Tree");
-        private static readonly int Dead = Animator.StringToHash("Dead");
+        private static readonly int Dead = Animator.StringToHash("Death");
 
         #endregion
     }

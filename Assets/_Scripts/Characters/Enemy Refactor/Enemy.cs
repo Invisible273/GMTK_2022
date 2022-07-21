@@ -10,10 +10,17 @@ namespace GMTK2022
 
         private Shooter shooter;
         private EnemyController enemyController;
+        Health eHealth = null;
+        
 
         protected override void Awake() {
             base.Awake();
             shooter = GetComponentInChildren<Shooter>();
+            eHealth = GetComponent<Health>();
+            if (eHealth)
+            {
+                eHealth.onDeath += Die;
+            }
             enemyController = GetComponent<EnemyController>();
 
             enemyController.onMove2Target += OnDirectionRecieved;
@@ -36,6 +43,7 @@ namespace GMTK2022
 
         public void Die()
         {
+            eHealth.onDeath -= Die;
             Destroy(gameObject);
         }
 

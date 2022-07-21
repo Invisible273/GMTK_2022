@@ -66,8 +66,7 @@ namespace GMTK2022
                 other.gameObject.GetComponent<Enemy>().Die();
             }
             else if(other.gameObject.CompareTag("Projectile"))
-            {
-                
+            {                
                 other.gameObject.GetComponent<Projectile>().GetDeflected();
             }
             

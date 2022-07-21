@@ -20,7 +20,7 @@ namespace GMTK2022
         // Start is called before the first frame update
         private void OnEnable() {
             rb = GetComponent<Rigidbody2D>();
-
+            target = Characters.Player;
             // For now the value of the bullet will be random, we'll decide if we want it to depend from other things
             value = Random.Range(1, 6);
 
