@@ -95,7 +95,7 @@ namespace GMTK2022
 
         private void AttackStarted() 
         {
-            
+            if(_isAttacking) return;
             Vector3 mouseVector = _lastMouseInput - transform.position;
             mouseVector.Normalize();
             _weaponRotator.Rotate2Target(_lastMouseInput);
