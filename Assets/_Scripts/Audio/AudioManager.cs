@@ -12,9 +12,10 @@ namespace GMTK2022
             Instance = this;
         }
 
-        public void PlayMusic(AudioClip clip) {
+        public void PlayMusic(AudioClip clip, bool loop) {
             _musicSource.Stop();
             _musicSource.clip = clip;
+            _musicSource.loop = loop;
             _musicSource.Play();
         }
 
