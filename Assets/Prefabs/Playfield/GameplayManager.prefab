@@ -107,6 +107,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4810951173948327594, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 39c4fc0b4900dc74d8543d6bbfeab124, type: 3}
+    - target: {fileID: 4810951173948327594, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969416202061183947, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129396803560763009, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
+      propertyPath: m_Name
+      value: ReloadLevel
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1568772892950129218, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}

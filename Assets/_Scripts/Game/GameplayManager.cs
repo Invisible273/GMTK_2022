@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace GMTK2022
 {
@@ -10,6 +11,7 @@ namespace GMTK2022
         [SerializeField]
         private TextMeshProUGUI scoreBoard = null;
         [SerializeField] PauseManager pManager = null;
+        Health playerHealth = null;
 
         public static GameplayManager instance = null;
 
@@ -30,6 +32,8 @@ namespace GMTK2022
         }
 
         private void Start() {
+            playerHealth = GameObject.Find("Player").GetComponent<Health>();
+            playerHealth.onDeath += GameEnded;
             SwitchStateTo(GameState.Play);
         }
 
@@ -76,20 +80,22 @@ namespace GMTK2022
                     if(PauseManager.isPaused) {
                         pManager.Pause();
                     }
+                    pManager.GameEnded();
 
 
                     break;
             }
         }
 
-        private void ResetLevel() {
-            currentScore = 0;
-            AddScore(0);
+        public void ResetLevel() {
+            // currentScore = 0;
+            // AddScore(0);
+            SceneManager.LoadScene(1);
         }
 
 
-        public void GameEnded() {
-            Debug.Log("Your score is: " + currentScore + ". You lost!");
+        public void GameEnded() {                     
+           
             SwitchStateTo(GameState.Dead);
         }
 
@@ -101,6 +107,11 @@ namespace GMTK2022
                     score_string = "0" + score_string;
                 scoreBoard.text = "SCORE: " + score_string;
             }
+        }
+
+        
+        private void OnDestroy() {
+            playerHealth.onDeath -= GameEnded;
         }
     }
 }

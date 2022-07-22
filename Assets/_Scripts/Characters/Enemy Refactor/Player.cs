@@ -11,6 +11,7 @@ namespace GMTK2022
         [SerializeField] private LayerMask collisionLayerMask;
         [SerializeField] private float maxRollSpeed;
         [SerializeField] private float rollSpeedDecay;
+        [SerializeField] GameObject deadPlayer;
         
         
         private PlayerController playerController;
@@ -58,6 +59,15 @@ namespace GMTK2022
                     HandleRolling();
                     break;
             }
+        }
+
+        public void Death()
+        {
+            if(deadPlayer)
+            {
+            Instantiate(deadPlayer, transform.position, Quaternion.identity);
+            }
+            Destroy(gameObject);
         }
 
         

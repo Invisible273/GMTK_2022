@@ -129,7 +129,7 @@ namespace GMTK2022
         {
             _playerHealth.onDeath -= DeathTriggered;
             
-            Destroy(_player.gameObject);
+            _player.Death();
         }
 
         #region Cached Properties
