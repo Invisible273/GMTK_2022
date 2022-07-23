@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 using UnityEngine.SceneManagement;
 
 namespace GMTK2022
@@ -10,10 +11,12 @@ namespace GMTK2022
 
         [SerializeField]
         private TextMeshProUGUI scoreBoard = null;
-        [SerializeField] PauseManager pManager = null;
-        Health playerHealth = null;
+        
+        
 
         public static GameplayManager instance = null;
+        public static event Action onPauseRequest;
+        public static event Action onGameEndRequest;
 
         GameState gameState;
         enum GameState
@@ -25,15 +28,18 @@ namespace GMTK2022
 
         private int currentScore = 0;
 
-        private void Awake() {
+        private void Awake()
+        {
+            if(FindObjectsOfType<GameplayManager>().Length > 1)
+            {
+                Destroy(gameObject);
+            }
             if(instance == null)
                 instance = this;
             DontDestroyOnLoad(gameObject);
         }
 
         private void Start() {
-            playerHealth = GameObject.Find("Player").GetComponent<Health>();
-            playerHealth.onDeath += GameEnded;
             SwitchStateTo(GameState.Play);
         }
 
@@ -52,10 +58,10 @@ namespace GMTK2022
                     }
                     break;
                 case GameState.Dead:
-                    if(Input.anyKey) {
-                        ResetLevel();
-                        SwitchStateTo(GameState.Play);
-                    }
+                    // if(Input.anyKey) {
+                    //     ResetLevel();
+                    //     SwitchStateTo(GameState.Play);
+                    // }
                     break;
             }
         }
@@ -64,23 +70,31 @@ namespace GMTK2022
             gameState = state;
             switch(gameState) {
                 case GameState.Pause:
-
-                    pManager.Pause();
+                onPauseRequest?.Invoke();
+                    
 
 
                     break;
                 case GameState.Play:
                     if(PauseManager.isPaused) {
-                        pManager.Pause();
+                        onPauseRequest?.Invoke();
                     }
 
 
                     break;
                 case GameState.Dead:
                     if(PauseManager.isPaused) {
-                        pManager.Pause();
+                        onPauseRequest?.Invoke();
                     }
-                    pManager.GameEnded();
+                    onGameEndRequest?.Invoke();
+                    if(Input.anyKey)
+                    {
+                        
+                        SwitchStateTo(GameState.Play);
+                        ResetLevel();
+                    }
+                    
+                    
 
 
                     break;
@@ -88,9 +102,7 @@ namespace GMTK2022
         }
 
         public void ResetLevel() {
-            // currentScore = 0;
-            // AddScore(0);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
 
 
@@ -101,17 +113,21 @@ namespace GMTK2022
 
         public void AddScore(int scoreToAdd) {
             currentScore += scoreToAdd;
-            if(scoreBoard != null) {
+            if(scoreBoard != null) 
+            {
                 string score_string = currentScore.ToString();
                 while(score_string.Length < MAX_SCORE_SIZE)
                     score_string = "0" + score_string;
                 scoreBoard.text = "SCORE: " + score_string;
             }
+            else if(scoreBoard == null)
+            {
+                scoreBoard = GameObject.Find("ScoreBoard").GetComponent<TextMeshProUGUI>();
+                AddScore(1);
+            }
         }
 
         
-        private void OnDestroy() {
-            playerHealth.onDeath -= GameEnded;
-        }
+        
     }
 }

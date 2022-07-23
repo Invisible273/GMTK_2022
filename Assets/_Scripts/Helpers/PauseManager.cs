@@ -7,11 +7,15 @@ namespace GMTK2022
         [SerializeField] Canvas pauseUICanvas;
         [SerializeField] Canvas gameEndCanvas;
         [SerializeField] private PlayerController _playerController;
+        
         public static bool isPaused = false;
 
         void Awake() {
+            
             pauseUICanvas.gameObject.SetActive(false);
             gameEndCanvas.gameObject.SetActive(false);
+            GameplayManager.onPauseRequest+=Pause;
+            GameplayManager.onGameEndRequest+=GameEnded;
         }
 
         public void Pause() {
@@ -31,6 +35,10 @@ namespace GMTK2022
         public void GameEnded()
         {
             gameEndCanvas.gameObject.SetActive(true);
+        }
+        private void OnDestroy() {
+            GameplayManager.onPauseRequest -= Pause;
+            GameplayManager.onGameEndRequest -= GameEnded;
         }
 
     }

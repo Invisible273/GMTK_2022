@@ -12,6 +12,7 @@ namespace GMTK2022
         [SerializeField] private float maxRollSpeed;
         [SerializeField] private float rollSpeedDecay;
         [SerializeField] GameObject deadPlayer;
+        GameplayManager gManager = null;
         
         
         private PlayerController playerController;
@@ -31,6 +32,7 @@ namespace GMTK2022
 
         protected override void Awake() {
             base.Awake();
+
            
             playerController = GetComponent<PlayerController>();
 
@@ -38,6 +40,7 @@ namespace GMTK2022
             playerController.onRollInput += OnRollInputRecieved;
             playerController.onMousePositionUpdate += OnTargetUpdate; 
             state = State.Normal;
+            gManager = FindObjectOfType<GameplayManager>();
         }
 
         private void OnRollInputRecieved(Vector2 movementDir) {
@@ -67,6 +70,7 @@ namespace GMTK2022
             {
             Instantiate(deadPlayer, transform.position, Quaternion.identity);
             }
+            gManager.GameEnded();
             Destroy(gameObject);
         }
 
