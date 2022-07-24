@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace GMTK2022
@@ -7,9 +8,11 @@ namespace GMTK2022
     {
         [SerializeField]
         private int enemyValue = 1;
+        
 
         private Shooter shooter;
         private EnemyController enemyController;
+        bool isDead =false;
         Health eHealth = null;
         
 
@@ -29,23 +32,39 @@ namespace GMTK2022
         }
 
         private void OnShootAtTarget(Vector2 targetPos2D) {
-            Vector3 targetPos = new Vector3(targetPos2D.x, targetPos2D.y, transform.position.z);
-            shooter.Shoot(targetPos);
+            if(!isDead)
+            {
+                Vector3 targetPos = new Vector3(targetPos2D.x, targetPos2D.y, transform.position.z);
+                shooter.Shoot(targetPos);
+            }
+            
         }
 
         protected override void OnTargetUpdate(Vector3 targetTransform) {
+            if (!isDead)
+            {
             weaponRotator.Rotate2TargetSnap(targetTransform);
+            }
         }
 
         private void FixedUpdate() {
-            HandleMovement();
+            if (!isDead)
+            {
+                HandleMovement();
+            }
+           
         }
 
         public void Die()
         {
+            isDead = true;    
+            StartCoroutine(GetComponent<EnemyAnimator>().PlayDeathAnimationAndDestroy());  
             eHealth.onDeath -= Die;
-            Destroy(gameObject);
+            
         }
+
+        
+        
 
         private void OnDestroy() {
             GameplayManager.instance.AddScore(enemyValue);

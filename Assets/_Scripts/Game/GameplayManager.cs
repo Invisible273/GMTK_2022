@@ -123,7 +123,7 @@ namespace GMTK2022
             else if(scoreBoard == null)
             {
                 scoreBoard = GameObject.Find("ScoreBoard").GetComponent<TextMeshProUGUI>();
-                AddScore(1);
+                
             }
         }
 

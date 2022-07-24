@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379acf801830d2b44b60d7174d5a41e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathClip: {fileID: 7400000, guid: 8bf40be14f4828b47bf850b2d89a9161, type: 2}
 --- !u!95 &8793448265375810478
 Animator:
   serializedVersion: 4
