@@ -17,8 +17,12 @@ namespace GMTK2022
 
 
         private PlayerController playerController;
+        private Vector2 _lastMovementDirection = Vector2.zero;
         private float currentRollSpeed;
         private Vector3 currentRollDir;
+
+        public event Action<Vector2> OnIdle;
+        public event Action<Vector2> OnWalk;
         public event Action<Vector2> OnRoll;
         public event Action<Vector2> OnRollEnd;
 
@@ -42,17 +46,26 @@ namespace GMTK2022
         }
 
         private void OnEnable() {
-            playerController.onMovementInput += OnDirectionRecieved;
+            playerController.onMovementInput += OnMoveDirectionRecieved;
             playerController.onRollInput += OnRollInputRecieved;
             playerController.onMousePositionUpdate += OnTargetUpdate;
             _playerHealth.onDeath += OnDeath;
         }
 
         private void OnDisable() {
-            playerController.onMovementInput -= OnDirectionRecieved;
+            playerController.onMovementInput -= OnMoveDirectionRecieved;
             playerController.onRollInput -= OnRollInputRecieved;
             playerController.onMousePositionUpdate -= OnTargetUpdate;
             _playerHealth.onDeath -= OnDeath;
+        }
+
+        protected override void OnMoveDirectionRecieved(Vector2 movementDir) {
+            base.OnMoveDirectionRecieved(movementDir);
+            OnWalk?.Invoke(movementDir);
+            if(movementDir == Vector2.zero) {
+                OnIdle?.Invoke(_lastMovementDirection);
+            }
+            _lastMovementDirection = movementDir;
         }
 
         private void OnRollInputRecieved(Vector2 movementDir) {
@@ -85,8 +98,6 @@ namespace GMTK2022
             gManager.GameEnded();
             Destroy(gameObject);
         }
-
-        
 
         private void HandleRolling() {
             debugRollTime += Time.fixedDeltaTime;

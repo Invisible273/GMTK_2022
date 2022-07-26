@@ -26,7 +26,7 @@ namespace GMTK2022
             }
             enemyController = GetComponent<EnemyController>();
 
-            enemyController.onMove2Target += OnDirectionRecieved;
+            enemyController.onMove2Target += OnMoveDirectionRecieved;
             enemyController.onShoot2Target += OnShootAtTarget;
             enemyController.onRotate2Target += OnTargetUpdate;
         }

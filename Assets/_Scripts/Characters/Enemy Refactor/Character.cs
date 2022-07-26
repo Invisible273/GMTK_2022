@@ -19,7 +19,7 @@ namespace GMTK2022
             walkVector = Vector2.zero;
         }
 
-        protected void OnDirectionRecieved(Vector2 movementDir) {
+        protected virtual void OnMoveDirectionRecieved(Vector2 movementDir) {
             walkVector = movementDir * movementSpeed;
         }
 
