@@ -6,30 +6,19 @@ namespace GMTK2022
 {
     public class PlayerAnimator : MonoBehaviour
     {
-        //Too many dependencies. May need refactoring.
+        //That's a large amount of dependencies. May need refactoring.
         [SerializeField] private Animator _animator;
         [SerializeField] private Player _player;
         [SerializeField] private PlayerController _playerController;
-        [SerializeField] private WeaponRotator _weaponRotator;
+        [SerializeField] private Weapon _weapon;
         [SerializeField] private Health _playerHealth;
-
-        //Needs a better way to track length of the attack
-        //Perhaps listen to attackstart/end event
-        public AnimationClip attackClip;
 
         //May need to use Unity's animator statemachine for transitions
         //rather than tracking everything here and transitioning manually.
         private Vector2 _lastMovementInput;
-        private Vector3 _lastMouseInput;
         private bool _isRolling;
         private bool _isAttacking;
         private bool _isDead;
-
-        //This script should not be responsible triggering logic.
-        //It should listen to triggers and animate based on that logic.
-        //These events should not be here.
-        public static event Action onAttackStarted;
-        public static event Action onAttackEnded;
 
         private void Awake() {
             ResetStates();
@@ -37,7 +26,6 @@ namespace GMTK2022
 
         public void ResetStates() {
             _lastMovementInput = Vector2.zero;
-            _lastMouseInput = Vector2.zero;
             _isRolling = false;
             _isAttacking = false;
             _isDead = false;
@@ -45,8 +33,8 @@ namespace GMTK2022
 
         private void OnEnable() {
             _playerController.onMovementInput += UpdateMovementVector;
-            _playerController.onMousePositionUpdate += UpdateMouseVector;
-            _playerController.OnAttackInput += AttackStarted;
+            _weapon.OnAttackStart += AttackStarted;
+            _weapon.OnAttackEnd += AttackComplete;
             _player.OnRoll += RollingStarted;
             _player.OnRollEnd += RollingComplete;
             _playerHealth.onDeath += DeathTriggered;
@@ -54,8 +42,8 @@ namespace GMTK2022
 
         private void OnDisable() {
             _playerController.onMovementInput -= UpdateMovementVector;
-            _playerController.onMousePositionUpdate -= UpdateMouseVector;
-            _playerController.OnAttackInput -= AttackStarted;
+            _weapon.OnAttackStart -= AttackStarted;
+            _weapon.OnAttackEnd -= AttackComplete;
             _player.OnRoll -= RollingStarted;
             _player.OnRollEnd -= RollingComplete;
             _playerHealth.onDeath -= DeathTriggered;
@@ -83,10 +71,6 @@ namespace GMTK2022
             _animator.SetFloat("movementY", direction.y);
         }
 
-        private void UpdateMouseVector(Vector3 position) {
-            _lastMouseInput = position;
-        }
-
         private void RollingStarted(Vector2 direction) {
             _isRolling = true;
             _animator.SetFloat("rollX", direction.x);
@@ -97,23 +81,14 @@ namespace GMTK2022
             _isRolling = false;
         }
 
-        private void AttackStarted() 
+        private void AttackStarted(Vector2 direction) 
         {
-            if(_isAttacking) return;
-            Vector3 mouseVector = _lastMouseInput - transform.position;
-            mouseVector.Normalize();
-            _weaponRotator.Rotate2Target(_lastMouseInput);
-            _animator.SetFloat("attackX", mouseVector.x);
-            _animator.SetFloat("attackY", mouseVector.y);
-
-            StartCoroutine(WaitForAttackAnimation(attackClip.length));
+            _isAttacking = true;
+            _animator.SetFloat("attackX", direction.x);
+            _animator.SetFloat("attackY", direction.y);
         }
 
-        private IEnumerator WaitForAttackAnimation(float duration) {
-            _isAttacking = true;
-            onAttackStarted?.Invoke();
-            yield return new WaitForSeconds(duration);
-            onAttackEnded?.Invoke();
+        private void AttackComplete() {
             _isAttacking = false;
         }
 
