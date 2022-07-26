@@ -6,37 +6,41 @@ namespace GMTK2022
 {
     public class PlayerAnimator : MonoBehaviour
     {
-        private Animator _animator;
+        //Too many dependencies. May need refactoring.
+        [SerializeField] private Animator _animator;
         [SerializeField] private Player _player;
         [SerializeField] private PlayerController _playerController;
-        [SerializeField] WeaponRotator _weaponRotator;
-        Health _playerHealth = null;
-        
+        [SerializeField] private WeaponRotator _weaponRotator;
+        [SerializeField] private Health _playerHealth;
 
+        //Needs a better way to track length of the attack
+        //Perhaps listen to attackstart/end event
         public AnimationClip attackClip;
 
+        //May need to use Unity's animator statemachine for transitions
+        //rather than tracking everything here and transitioning manually.
         private Vector2 _lastMovementInput;
         private Vector3 _lastMouseInput;
         private bool _isRolling;
         private bool _isAttacking;
         private bool _isDead;
+
+        //This script should not be responsible triggering logic.
+        //It should listen to triggers and animate based on that logic.
+        //These events should not be here.
         public static event Action onAttackStarted;
         public static event Action onAttackEnded;
 
         private void Awake() {
-            _animator = GetComponent<Animator>();
-            if(!_player || !_playerController) Debug.LogError("Player controllers not set!");
+            ResetStates();
+        }
+
+        public void ResetStates() {
             _lastMovementInput = Vector2.zero;
             _lastMouseInput = Vector2.zero;
             _isRolling = false;
             _isAttacking = false;
             _isDead = false;
-            _playerHealth = _player.GetComponent<Health>();
-            if (_playerHealth)
-            {
-               _playerHealth.onDeath += DeathTriggered;
-            }
-            
         }
 
         private void OnEnable() {
@@ -45,7 +49,7 @@ namespace GMTK2022
             _playerController.OnAttackInput += AttackStarted;
             _player.OnRoll += RollingStarted;
             _player.OnRollEnd += RollingComplete;
-            
+            _playerHealth.onDeath += DeathTriggered;
         }
 
         private void OnDisable() {
@@ -54,7 +58,7 @@ namespace GMTK2022
             _playerController.OnAttackInput -= AttackStarted;
             _player.OnRoll -= RollingStarted;
             _player.OnRollEnd -= RollingComplete;
-           
+            _playerHealth.onDeath -= DeathTriggered;
         }
 
         private void Update() {
@@ -124,15 +128,9 @@ namespace GMTK2022
             if(_isRolling) return Roll;
             return _lastMovementInput == Vector2.zero ? Idle : Walk;
         }
-        //animation events
-        void Die()
-        {
-            _playerHealth.onDeath -= DeathTriggered;
-            
-            _player.Death();
-        }
 
         #region Cached Properties
+        //This way of handling animation states was influned by Tarodev
 
         private int _currentState;
 
