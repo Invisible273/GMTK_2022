@@ -24,11 +24,19 @@ namespace GMTK2022
             {
                 eHealth.onDeath += Die;
             }
-            enemyController = GetComponent<EnemyController>();
+            enemyController = GetComponent<EnemyController>();     
+        }
 
+        private void OnEnable() {
             enemyController.onMove2Target += OnMoveDirectionRecieved;
             enemyController.onShoot2Target += OnShootAtTarget;
             enemyController.onRotate2Target += OnTargetUpdate;
+        }
+
+        private void OnDisable() {
+            enemyController.onMove2Target -= OnDirectionRecieved;
+            enemyController.onShoot2Target -= OnShootAtTarget;
+            enemyController.onRotate2Target -= OnTargetUpdate;
         }
 
         private void OnShootAtTarget(Vector2 targetPos2D) {
