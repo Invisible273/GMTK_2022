@@ -202,10 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49b6dad372d5bf41995299f19a5b3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 1153077121}
   _player: {fileID: 3529117556607379003}
   _playerController: {fileID: 2203771743708642502}
-  _weaponRotator: {fileID: 8193374998248468526}
-  attackClip: {fileID: 7400000, guid: 35e1bf1fc9a9c6e48a2e60cced083e83, type: 2}
+  _weapon: {fileID: 1908588099}
+  _playerHealth: {fileID: 667576100}
 --- !u!1 &1906913165
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,6 +460,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c1abc92d3def34d8185e55012b561a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hitBox: {fileID: 1908588098}
+  _playerController: {fileID: 2203771743708642502}
+  _weaponRotator: {fileID: 8193374998248468526}
+  _attackClip: {fileID: 7400000, guid: 35e1bf1fc9a9c6e48a2e60cced083e83, type: 2}
+  _attackDuration: 0.3
 --- !u!1 &2203771743708642508
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +637,7 @@ MonoBehaviour:
     m_Bits: 1024
   maxRollSpeed: 25
   rollSpeedDecay: 10
+  deadPlayer: {fileID: 737039020340058576, guid: 9b2fa77dcdd63444ba2cfbbaf76dfb80, type: 3}
 --- !u!114 &1926073866
 MonoBehaviour:
   m_ObjectHideFlags: 0

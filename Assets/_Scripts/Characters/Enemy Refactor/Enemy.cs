@@ -28,13 +28,13 @@ namespace GMTK2022
         }
 
         private void OnEnable() {
-            enemyController.onMove2Target += OnDirectionRecieved;
+            enemyController.onMove2Target += OnMoveDirectionRecieved;
             enemyController.onShoot2Target += OnShootAtTarget;
             enemyController.onRotate2Target += OnTargetUpdate;
         }
 
         private void OnDisable() {
-            enemyController.onMove2Target -= OnDirectionRecieved;
+            enemyController.onMove2Target -= OnMoveDirectionRecieved;
             enemyController.onShoot2Target -= OnShootAtTarget;
             enemyController.onRotate2Target -= OnTargetUpdate;
         }

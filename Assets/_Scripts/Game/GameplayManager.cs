@@ -122,6 +122,7 @@ namespace GMTK2022
             }
             else if(scoreBoard == null)
             {
+                //TODO: Fix null ref after gameover
                 scoreBoard = GameObject.Find("ScoreBoard").GetComponent<TextMeshProUGUI>();
                 
             }

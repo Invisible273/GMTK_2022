@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GMTK2022
 {
-    [RequireComponent(typeof(PlayerController))]
+    [RequireComponent(typeof(PlayerController), typeof(Health))]
     public class Player : Character
     {
         private const float ROLL_THRESHOLD = 5f;
@@ -13,13 +13,18 @@ namespace GMTK2022
         [SerializeField] private float rollSpeedDecay;
         [SerializeField] GameObject deadPlayer;
         GameplayManager gManager = null;
-        
-        
+        private Health _playerHealth = default;
+
+
         private PlayerController playerController;
+        private Vector2 _lastMovementDirection = Vector2.zero;
         private float currentRollSpeed;
         private Vector3 currentRollDir;
-        public Action<Vector2> OnRoll;
-        public Action<Vector2> OnRollEnd;
+
+        public event Action<Vector2> OnIdle;
+        public event Action<Vector2> OnWalk;
+        public event Action<Vector2> OnRoll;
+        public event Action<Vector2> OnRollEnd;
 
         private float debugRollTime = 0.0f;
 
@@ -33,14 +38,34 @@ namespace GMTK2022
         protected override void Awake() {
             base.Awake();
 
-           
             playerController = GetComponent<PlayerController>();
+            _playerHealth = GetComponent<Health>();
 
-            playerController.onMovementInput += OnDirectionRecieved;
-            playerController.onRollInput += OnRollInputRecieved;
-            playerController.onMousePositionUpdate += OnTargetUpdate; 
             state = State.Normal;
             gManager = FindObjectOfType<GameplayManager>();
+        }
+
+        private void OnEnable() {
+            playerController.onMovementInput += OnMoveDirectionRecieved;
+            playerController.onRollInput += OnRollInputRecieved;
+            playerController.onMousePositionUpdate += OnTargetUpdate;
+            _playerHealth.onDeath += OnDeath;
+        }
+
+        private void OnDisable() {
+            playerController.onMovementInput -= OnMoveDirectionRecieved;
+            playerController.onRollInput -= OnRollInputRecieved;
+            playerController.onMousePositionUpdate -= OnTargetUpdate;
+            _playerHealth.onDeath -= OnDeath;
+        }
+
+        protected override void OnMoveDirectionRecieved(Vector2 movementDir) {
+            base.OnMoveDirectionRecieved(movementDir);
+            OnWalk?.Invoke(movementDir);
+            if(movementDir == Vector2.zero) {
+                OnIdle?.Invoke(_lastMovementDirection);
+            }
+            _lastMovementDirection = movementDir;
         }
 
         private void OnRollInputRecieved(Vector2 movementDir) {
@@ -64,7 +89,7 @@ namespace GMTK2022
             }
         }
 
-        public void Death()
+        private void OnDeath()
         {
             if(deadPlayer)
             {
@@ -73,8 +98,6 @@ namespace GMTK2022
             gManager.GameEnded();
             Destroy(gameObject);
         }
-
-        
 
         private void HandleRolling() {
             debugRollTime += Time.fixedDeltaTime;
