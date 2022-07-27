@@ -7,39 +7,44 @@ namespace GMTK2022
         [SerializeField] Canvas pauseUICanvas;
         [SerializeField] Canvas gameEndCanvas;
         [SerializeField] private PlayerController _playerController;
+        [SerializeField] private GameStateSO _gameStateSO;
         
-        public static bool isPaused = false;
+        private bool _isPaused = false;
 
-        void Awake() {
-            
+        private void Start() {
             pauseUICanvas.gameObject.SetActive(false);
             gameEndCanvas.gameObject.SetActive(false);
-            GameplayManager.onPauseRequest+=Pause;
-            GameplayManager.onGameEndRequest+=GameEnded;
         }
 
-        public void Pause() {
-            if(!isPaused) {
-                isPaused = true;
-                pauseUICanvas.gameObject.SetActive(true);
-                Time.timeScale = 0;
-                _playerController.enabled = false;
-            } else if(isPaused) {
-                isPaused = false;
-                pauseUICanvas.gameObject.SetActive(false);
-                Time.timeScale = 1;
-                _playerController.enabled = true;
-            }
+        private void OnEnable() {
+            _gameStateSO.OnGamePause += Pause;
+            _gameStateSO.OnGameResume += Resume;
+            _gameStateSO.OnGameOver += GameEnded;
         }
 
-        public void GameEnded()
+        private void OnDisable() {
+            _gameStateSO.OnGamePause -= Pause;
+            _gameStateSO.OnGameResume -= Resume;
+            _gameStateSO.OnGameOver -= GameEnded;
+        }
+
+        private void Pause() {
+            _isPaused = true;
+            pauseUICanvas.gameObject.SetActive(true);
+            Time.timeScale = 0;
+            _playerController.enabled = false;
+        }
+
+        private void Resume() {
+            _isPaused = false;
+            pauseUICanvas.gameObject.SetActive(false);
+            Time.timeScale = 1;
+            _playerController.enabled = true;
+        }
+
+        private void GameEnded()
         {
             gameEndCanvas.gameObject.SetActive(true);
         }
-        private void OnDestroy() {
-            GameplayManager.onPauseRequest -= Pause;
-            GameplayManager.onGameEndRequest -= GameEnded;
-        }
-
     }
 }

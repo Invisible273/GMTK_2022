@@ -136,11 +136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 601852754432983712, guid: 69c48823744e78b42ad54881159b7fc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.33191
+      value: 20.89
       objectReference: {fileID: 0}
     - target: {fileID: 601852754432983712, guid: 69c48823744e78b42ad54881159b7fc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.600002
+      value: 10.6
       objectReference: {fileID: 0}
     - target: {fileID: 601852754432983712, guid: 69c48823744e78b42ad54881159b7fc3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -534,6 +534,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1568772892950129220, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
+      propertyPath: _gameStateSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 44244485fd61a9a47a093fed9340a0cb, type: 2}
+    - target: {fileID: 1568772892950129220, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
+      propertyPath: _playerController
+      value: 
+      objectReference: {fileID: 667576104}
     - target: {fileID: 1568772892950129221, guid: c5b3375dc9134974aae1cdc7108ac66d, type: 3}
       propertyPath: m_Name
       value: PauseManager
@@ -587,6 +595,10 @@ PrefabInstance:
       propertyPath: scoreBoard
       value: 
       objectReference: {fileID: 46420789}
+    - target: {fileID: 5232755913310062954, guid: 41e80be46749fd9439c219516f3ff60e, type: 3}
+      propertyPath: _gameStateSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 44244485fd61a9a47a093fed9340a0cb, type: 2}
     - target: {fileID: 5232755913310062955, guid: 41e80be46749fd9439c219516f3ff60e, type: 3}
       propertyPath: m_RootOrder
       value: 7
