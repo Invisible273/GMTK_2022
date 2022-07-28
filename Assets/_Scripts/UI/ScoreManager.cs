@@ -5,7 +5,6 @@ namespace GMTK2022
 {
     public class ScoreManager : MonoBehaviour
     {
-
         public int score;
         private Text ScoreText;
 

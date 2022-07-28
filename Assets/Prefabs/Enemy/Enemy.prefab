@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2
   enemyValue: 1
+  _scoreSO: {fileID: 11400000, guid: a254b246253248543bb12015a4773ad2, type: 2}
 --- !u!114 &945816611267811947
 MonoBehaviour:
   m_ObjectHideFlags: 0
