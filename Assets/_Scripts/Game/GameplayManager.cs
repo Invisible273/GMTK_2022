@@ -1,35 +1,20 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
 
 namespace GMTK2022
 {
     public class GameplayManager : MonoBehaviour
     {
-        private const int MAX_SCORE_SIZE = 6;
+        [SerializeField] private GameStateSO _gameStateSO;
+        [SerializeField] private ScoreSO _scoreSO;
 
-        [SerializeField]
-        private GameStateSO _gameStateSO;
-
-        [SerializeField]
-        private TextMeshProUGUI scoreBoard = null;
-
-        public static GameplayManager instance = null;
-
-        private int currentScore = 0;
-
-        private void Awake()
-        {
-            if(FindObjectsOfType<GameplayManager>().Length > 1)
-            {
-                Destroy(gameObject);
-            }
-            if(instance == null)
-                instance = this;
+        private void Awake() {
+            ResetGameData();
         }
 
-        private void Start() {
-            _gameStateSO.Init();
+        private void ResetGameData() {
+            _gameStateSO.ResetGameState();
+            _scoreSO.ResetScore();
         }
 
         private void Update() {
@@ -63,22 +48,8 @@ namespace GMTK2022
             SceneManager.LoadScene(0);
         }
 
-        public void GameEnded() {
+        public void GameOver() {
             _gameStateSO.SwitchToState(GameState.GameOver);
-        }
-
-        public void AddScore(int scoreToAdd) {
-            currentScore += scoreToAdd;
-            if(scoreBoard != null) 
-            {
-                string score_string = currentScore.ToString("D" + MAX_SCORE_SIZE.ToString());
-                scoreBoard.text = "SCORE: " + score_string;
-            }
-            else if(scoreBoard == null)
-            {
-                //TODO: Fix null ref after gameover
-                scoreBoard = GameObject.Find("ScoreBoard").GetComponent<TextMeshProUGUI>();
-            }
         }
     }
 }

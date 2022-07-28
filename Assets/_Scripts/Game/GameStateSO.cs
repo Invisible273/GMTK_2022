@@ -32,11 +32,7 @@ namespace GMTK2022
         public event Action OnGameResume;
         public event Action OnGameOver;
 
-        private void OnEnable() {
-            Init();
-        }
-
-        public void Init() {
+        public void ResetGameState() {
             _currentState = GameState.Initializing;
         }
     }

@@ -95,7 +95,7 @@ namespace GMTK2022
             {
             Instantiate(deadPlayer, transform.position, Quaternion.identity);
             }
-            gManager.GameEnded();
+            gManager.GameOver();
             Destroy(gameObject);
         }
 

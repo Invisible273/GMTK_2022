@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 namespace GMTK2022
@@ -8,7 +7,7 @@ namespace GMTK2022
     {
         [SerializeField]
         private int enemyValue = 1;
-        
+        [SerializeField] ScoreSO _scoreSO;
 
         private Shooter shooter;
         private EnemyController enemyController;
@@ -20,10 +19,6 @@ namespace GMTK2022
             base.Awake();
             shooter = GetComponentInChildren<Shooter>();
             eHealth = GetComponent<Health>();
-            if (eHealth)
-            {
-                eHealth.onDeath += Die;
-            }
             enemyController = GetComponent<EnemyController>();     
         }
 
@@ -31,12 +26,14 @@ namespace GMTK2022
             enemyController.onMove2Target += OnMoveDirectionRecieved;
             enemyController.onShoot2Target += OnShootAtTarget;
             enemyController.onRotate2Target += OnTargetUpdate;
+            eHealth.onDeath += Die;
         }
 
         private void OnDisable() {
             enemyController.onMove2Target -= OnMoveDirectionRecieved;
             enemyController.onShoot2Target -= OnShootAtTarget;
             enemyController.onRotate2Target -= OnTargetUpdate;
+            eHealth.onDeath -= Die;
         }
 
         private void OnShootAtTarget(Vector2 targetPos2D) {
@@ -66,16 +63,8 @@ namespace GMTK2022
         public void Die()
         {
             isDead = true;    
+            _scoreSO.AddScore(enemyValue);
             StartCoroutine(GetComponent<EnemyAnimator>().PlayDeathAnimationAndDestroy());  
-            eHealth.onDeath -= Die;
-            
-        }
-
-        
-        
-
-        private void OnDestroy() {
-            GameplayManager.instance.AddScore(enemyValue);
         }
     }
 }
