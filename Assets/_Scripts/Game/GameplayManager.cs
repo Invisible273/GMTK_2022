@@ -71,9 +71,7 @@ namespace GMTK2022
             currentScore += scoreToAdd;
             if(scoreBoard != null) 
             {
-                string score_string = currentScore.ToString();
-                while(score_string.Length < MAX_SCORE_SIZE)
-                    score_string = "0" + score_string;
+                string score_string = currentScore.ToString("D" + MAX_SCORE_SIZE.ToString());
                 scoreBoard.text = "SCORE: " + score_string;
             }
             else if(scoreBoard == null)
