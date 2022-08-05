@@ -46,3 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameStateSO: {fileID: 11400000, guid: 44244485fd61a9a47a093fed9340a0cb, type: 2}
   _scoreSO: {fileID: 11400000, guid: a254b246253248543bb12015a4773ad2, type: 2}
+  _playerHealth: {fileID: 0}
+  _audioChannel: {fileID: 11400000, guid: 3465c6935d86c5242a1227e9fca9481d, type: 2}
+  _gameoverClip: {fileID: 8300000, guid: c46ffb6faa2aaaf4a8f89bb701b8ca3c, type: 3}

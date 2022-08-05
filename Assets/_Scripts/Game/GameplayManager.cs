@@ -8,6 +8,10 @@ namespace GMTK2022
         [SerializeField] private ScoreSO _scoreSO;
         [SerializeField] private Health _playerHealth;
 
+        [Header("SFX")]
+        [SerializeField] private SFXChannelSO _audioChannel;
+        [SerializeField] private AudioClip _gameoverClip;
+
         private void Awake() {
             ResetGameData();
         }
@@ -54,6 +58,8 @@ namespace GMTK2022
         /// </summary>
         public void GameOver() {
             _gameStateSO.SwitchToState(GameState.GameOver);
+            if(_gameoverClip != null) _audioChannel?.PlayClip(_gameoverClip);
+
             _playerHealth.GetComponent<BoxCollider2D>().enabled = false;
             var rigidbody = _playerHealth.GetComponent<Rigidbody2D>();
             rigidbody.isKinematic = true;
