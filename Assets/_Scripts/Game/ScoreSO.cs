@@ -11,8 +11,10 @@ namespace GMTK2022
 
         public event Action<int> OnScoreChanged;
 
+        [SerializeField] DiceSO _diceSO;
+
         public void AddScore(int amount) {
-            _score += amount;
+            _score += amount * _diceSO.TopFace.Value;
             OnScoreChanged?.Invoke(_score);
         }
 

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Score
   m_EditorClassIdentifier: 
   _score: 0
+  _diceSO: {fileID: 11400000, guid: c66961769811f4b4faa393647ab264bf, type: 2}
