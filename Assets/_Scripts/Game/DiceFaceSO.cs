@@ -16,8 +16,5 @@ namespace GMTK2022
 
         [SerializeField] private Sprite _spriteSide;
         public Sprite SpriteSide => _spriteSide;
-
-        [SerializeField] private AudioClip _audioClip;
-        public AudioClip AudioClip => _audioClip;
     }
 }

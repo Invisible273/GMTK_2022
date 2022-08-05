@@ -204,7 +204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1153077121}
   _player: {fileID: 3529117556607379003}
-  _playerController: {fileID: 2203771743708642502}
   _weapon: {fileID: 1908588099}
   _playerHealth: {fileID: 667576100}
 --- !u!1 &1906913165
@@ -637,7 +636,6 @@ MonoBehaviour:
     m_Bits: 1024
   maxRollSpeed: 25
   rollSpeedDecay: 10
-  deadPlayer: {fileID: 737039020340058576, guid: 9b2fa77dcdd63444ba2cfbbaf76dfb80, type: 3}
 --- !u!114 &1926073866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,6 +649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dice: {fileID: 11400000, guid: c66961769811f4b4faa393647ab264bf, type: 2}
+  _audioChannel: {fileID: 11400000, guid: 3465c6935d86c5242a1227e9fca9481d, type: 2}
+  _audioClip: {fileID: 8300000, guid: 69fe105081994bb4f865969ac739566b, type: 3}
 --- !u!114 &1926073867
 MonoBehaviour:
   m_ObjectHideFlags: 0
