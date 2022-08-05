@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace GMTK2022
 {
@@ -36,16 +35,7 @@ namespace GMTK2022
                         _gameStateSO.SwitchToState(GameState.Paused);
                     }
                     break;
-                case GameState.GameOver:
-                    if(Input.anyKeyDown) {
-                        ResetLevel();
-                    }
-                    break;
             }
-        }
-
-        public void ResetLevel() {
-            SceneManager.LoadScene(0);
         }
 
         public void GameOver() {
