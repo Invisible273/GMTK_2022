@@ -16,6 +16,10 @@ namespace GMTK2022
 
         public int value; // Goes from 1 to 6
 
+        [Header("SFX")]
+        [SerializeField] private SFXChannelSO _audioChannel;
+        [SerializeField] private AudioClip _hitClip;
+
         // Start is called before the first frame update
         private void OnEnable() {
             rb = GetComponent<Rigidbody2D>();
@@ -56,6 +60,7 @@ namespace GMTK2022
                 Health tHealth = other.GetComponent<Health>();
                 if(tHealth) {
                     other.GetComponent<Health>().GetDamaged(damage);
+                    if(_hitClip != null) _audioChannel?.PlayClip(_hitClip);
                     gameObject.SetActive(false);
                 }
             }

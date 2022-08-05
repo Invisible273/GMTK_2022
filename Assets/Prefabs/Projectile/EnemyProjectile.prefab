@@ -143,6 +143,14 @@ PrefabInstance:
       propertyPath: target
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7901028746666947315, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: _hitClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d4b3ba6f7fdb924cbe78aea5ea670b7, type: 3}
+    - target: {fileID: 7901028746666947315, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: _audioChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 3465c6935d86c5242a1227e9fca9481d, type: 2}
     m_RemovedComponents:
     - {fileID: 7806908048254664030, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}

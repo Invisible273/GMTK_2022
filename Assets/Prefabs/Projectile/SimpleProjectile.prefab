@@ -275,6 +275,8 @@ MonoBehaviour:
   target: 1
   damage: 10
   value: 0
+  _audioChannel: {fileID: 11400000, guid: 3465c6935d86c5242a1227e9fca9481d, type: 2}
+  _hitClip: {fileID: 8300000, guid: 5d4b3ba6f7fdb924cbe78aea5ea670b7, type: 3}
 --- !u!58 &7806908048254664030
 CircleCollider2D:
   m_ObjectHideFlags: 0
