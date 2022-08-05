@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameplayManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5232755913310062954, guid: 41e80be46749fd9439c219516f3ff60e, type: 3}
+      propertyPath: _playerHealth
+      value: 
+      objectReference: {fileID: 667576100}
     - target: {fileID: 5232755913310062955, guid: 41e80be46749fd9439c219516f3ff60e, type: 3}
       propertyPath: m_RootOrder
       value: 7

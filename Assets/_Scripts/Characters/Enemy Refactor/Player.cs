@@ -11,9 +11,6 @@ namespace GMTK2022
         [SerializeField] private LayerMask collisionLayerMask;
         [SerializeField] private float maxRollSpeed;
         [SerializeField] private float rollSpeedDecay;
-        [SerializeField] GameObject deadPlayer;
-        GameplayManager gManager = null;
-        private Health _playerHealth = default;
 
 
         private PlayerController playerController;
@@ -39,24 +36,20 @@ namespace GMTK2022
             base.Awake();
 
             playerController = GetComponent<PlayerController>();
-            _playerHealth = GetComponent<Health>();
 
             state = State.Normal;
-            gManager = FindObjectOfType<GameplayManager>();
         }
 
         private void OnEnable() {
             playerController.onMovementInput += OnMoveDirectionRecieved;
             playerController.onRollInput += OnRollInputRecieved;
             playerController.onMousePositionUpdate += OnTargetUpdate;
-            _playerHealth.onDeath += OnDeath;
         }
 
         private void OnDisable() {
             playerController.onMovementInput -= OnMoveDirectionRecieved;
             playerController.onRollInput -= OnRollInputRecieved;
             playerController.onMousePositionUpdate -= OnTargetUpdate;
-            _playerHealth.onDeath -= OnDeath;
         }
 
         protected override void OnMoveDirectionRecieved(Vector2 movementDir) {
@@ -87,16 +80,6 @@ namespace GMTK2022
                     HandleRolling();
                     break;
             }
-        }
-
-        private void OnDeath()
-        {
-            if(deadPlayer)
-            {
-            Instantiate(deadPlayer, transform.position, Quaternion.identity);
-            }
-            gManager.GameOver();
-            Destroy(gameObject);
         }
 
         private void HandleRolling() {

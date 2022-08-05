@@ -6,6 +6,7 @@ namespace GMTK2022
     {
         [SerializeField] private GameStateSO _gameStateSO;
         [SerializeField] private ScoreSO _scoreSO;
+        [SerializeField] private Health _playerHealth;
 
         private void Awake() {
             ResetGameData();
@@ -14,6 +15,14 @@ namespace GMTK2022
         private void ResetGameData() {
             _gameStateSO.ResetGameState();
             _scoreSO.ResetScore();
+        }
+
+        private void OnEnable() {
+            _playerHealth.onDeath += GameOver;
+        }
+
+        private void OnDisable() {
+            _playerHealth.onDeath -= GameOver;
         }
 
         private void Update() {
@@ -38,8 +47,20 @@ namespace GMTK2022
             }
         }
 
+        /// <summary>
+        /// Cleanup/disable scripts when game is over. Inefficient, as it
+        /// does several GetComponent calls. Several scripts need refactoring
+        /// to handle this logic better.
+        /// </summary>
         public void GameOver() {
             _gameStateSO.SwitchToState(GameState.GameOver);
+            _playerHealth.GetComponent<BoxCollider2D>().enabled = false;
+            var rigidbody = _playerHealth.GetComponent<Rigidbody2D>();
+            rigidbody.isKinematic = true;
+            rigidbody.velocity = Vector2.zero;
+            _playerHealth.GetComponent<Player>().enabled = false;
+            _playerHealth.GetComponent<PlayerController>().enabled = false;
+            _playerHealth.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }
