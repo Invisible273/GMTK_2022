@@ -13,7 +13,11 @@ namespace GMTK2022
         private EnemyController enemyController;
         bool isDead =false;
         Health eHealth = null;
-        
+
+        [Header("SFX")]
+        [SerializeField] private SFXChannelSO _audioChannel;
+        [SerializeField] private AudioClip _shootClip;
+        [SerializeField] private AudioClip _deathClip;
 
         protected override void Awake() {
             base.Awake();
@@ -41,6 +45,7 @@ namespace GMTK2022
             {
                 Vector3 targetPos = new Vector3(targetPos2D.x, targetPos2D.y, transform.position.z);
                 shooter.Shoot(targetPos);
+                if(_shootClip != null) _audioChannel?.PlayClip(_shootClip);
             }
             
         }
@@ -64,7 +69,8 @@ namespace GMTK2022
         {
             isDead = true;    
             _scoreSO.AddScore(enemyValue);
-            StartCoroutine(GetComponent<EnemyAnimator>().PlayDeathAnimationAndDestroy());  
+            StartCoroutine(GetComponent<EnemyAnimator>().PlayDeathAnimationAndDestroy());
+            if(_deathClip != null) _audioChannel?.PlayClip(_deathClip);
         }
     }
 }

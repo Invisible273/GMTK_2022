@@ -161,6 +161,9 @@ MonoBehaviour:
   movementSpeed: 2
   enemyValue: 1
   _scoreSO: {fileID: 11400000, guid: a254b246253248543bb12015a4773ad2, type: 2}
+  _audioChannel: {fileID: 11400000, guid: 3465c6935d86c5242a1227e9fca9481d, type: 2}
+  _shootClip: {fileID: 8300000, guid: 77d6102d744a11e469afad13e0c96651, type: 3}
+  _deathClip: {fileID: 8300000, guid: 054883bd6b22a4848ba59b7cb76cad49, type: 3}
 --- !u!114 &945816611267811947
 MonoBehaviour:
   m_ObjectHideFlags: 0
