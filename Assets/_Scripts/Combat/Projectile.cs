@@ -5,14 +5,13 @@ namespace GMTK2022
 {
     public class Projectile : MonoBehaviour
     {
-        [SerializeField] float speed = 750f;
-        [SerializeField] float lifetime = 5f;
+        [SerializeField] float speed = 25f;
+        [SerializeField] float lifetime = 1f;
         [SerializeField] Characters target;
         [SerializeField] float damage = 10f;
         bool isDeflected = false;
         Vector2 direction;
         private Rigidbody2D rb;
-        Vector3 lastVelocity;
 
         public int value; // Goes from 1 to 6
 
@@ -20,34 +19,25 @@ namespace GMTK2022
         [SerializeField] private SFXChannelSO _audioChannel;
         [SerializeField] private AudioClip _hitClip;
 
+        private void Awake() {
+            rb = GetComponent<Rigidbody2D>();
+        }
+
         // Start is called before the first frame update
         private void OnEnable() {
-            rb = GetComponent<Rigidbody2D>();
             target = Characters.Player;
             // For now the value of the bullet will be random, we'll decide if we want it to depend from other things
             value = Random.Range(1, 6);
 
             StartCoroutine(WaitAndDisable());
-
         }
 
-        // Update is called once per frame
-        void Update() {
-            lastVelocity = rb.velocity;
-
-            MoveTowardsTarget();
+        private void FixedUpdate() {
+            rb.velocity = direction * speed;
         }
 
         public void SetDirection(Vector3 dir) {
             direction = dir.normalized;
-        }
-
-        void MoveTowardsTarget() {
-            // if(direction != null && !started) {
-            //     rb.AddForce(new Vector2(direction.x * speed * Time.deltaTime, direction.y * speed * Time.deltaTime));
-            //     started = true;
-                GetComponent<Rigidbody2D>().velocity = direction * speed * Time.deltaTime;
-            // }
         }
 
         IEnumerator WaitAndDisable() {
@@ -77,7 +67,7 @@ namespace GMTK2022
         {
             if(!isDeflected)
             {
-                Vector3 curVelocity = GetComponent<Rigidbody2D>().velocity;
+                Vector3 curVelocity = rb.velocity;
                 SetDirection(-curVelocity);
                 target = Characters.Enemy;
                 isDeflected = true;
