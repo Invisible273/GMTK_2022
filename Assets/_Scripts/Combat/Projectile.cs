@@ -13,7 +13,6 @@ namespace GMTK2022
         Vector2 direction;
         private Rigidbody2D rb;
         Vector3 lastVelocity;
-        bool started = false;
 
         public int value; // Goes from 1 to 6
 
