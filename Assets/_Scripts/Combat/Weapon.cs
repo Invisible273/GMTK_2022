@@ -17,6 +17,12 @@ namespace GMTK2022
         public event Action<Vector2> OnAttackStart;
         public event Action OnAttackEnd;
 
+        [Header("SFX")]
+        [SerializeField] private SFXChannelSO _audioChannel;
+        [SerializeField] private AudioClip _swingClip;
+        [SerializeField] private AudioClip _hitClip;
+        [SerializeField] private AudioClip _parryClip;
+
         // [Header("Parrying")]
         // [SerializeField] float parryTimer = 0.25f;
         // public bool isParrying = false;
@@ -72,6 +78,7 @@ namespace GMTK2022
             _isAttacking = true;
             _hitBox.enabled = true;
             OnAttackStart?.Invoke(mouseVector);
+            if(_swingClip != null) _audioChannel?.PlayClip(_swingClip);
 
             StartCoroutine(ResetAfterAttackDuration(_attackDuration));
         }
@@ -88,10 +95,12 @@ namespace GMTK2022
             if(other.gameObject.CompareTag("Enemy"))
             {
                 other.gameObject.GetComponent<Enemy>().Die();
+                if(_hitClip != null) _audioChannel?.PlayClip(_hitClip);
             }
             else if(other.gameObject.CompareTag("Projectile"))
             {                
                 other.gameObject.GetComponent<Projectile>().GetDeflected();
+                if(_parryClip != null) _audioChannel?.PlayClip(_parryClip);
             }
             
         }

@@ -464,6 +464,10 @@ MonoBehaviour:
   _weaponRotator: {fileID: 8193374998248468526}
   _attackClip: {fileID: 7400000, guid: 35e1bf1fc9a9c6e48a2e60cced083e83, type: 2}
   _attackDuration: 0.3
+  _audioChannel: {fileID: 11400000, guid: 3465c6935d86c5242a1227e9fca9481d, type: 2}
+  _swingClip: {fileID: 8300000, guid: 9c2b3449c586fbe40982c8f9055ce532, type: 3}
+  _hitClip: {fileID: 8300000, guid: ce77aeb6615263e4780b0bb57494cf11, type: 3}
+  _parryClip: {fileID: 8300000, guid: ce25f9caba9f6a449a55bbb7ed06cf1e, type: 3}
 --- !u!1 &2203771743708642508
 GameObject:
   m_ObjectHideFlags: 0
