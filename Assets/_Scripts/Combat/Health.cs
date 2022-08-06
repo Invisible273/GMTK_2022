@@ -12,7 +12,7 @@ namespace GMTK2022
             health = maxHealth;
         }
 
-        public void GetDamaged(float amount) {
+        public virtual void GetDamaged(float amount) {
             if(health - amount > 0) {
                 health -= amount;
             } else if(health - amount <= 0) {

@@ -205,7 +205,7 @@ MonoBehaviour:
   _animator: {fileID: 1153077121}
   _player: {fileID: 3529117556607379003}
   _weapon: {fileID: 1908588099}
-  _playerHealth: {fileID: 667576100}
+  _playerHealth: {fileID: 7643352804066108522}
 --- !u!1 &1906913165
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 3529117556607379003}
   - component: {fileID: 1926073866}
   - component: {fileID: 1926073867}
-  - component: {fileID: 667576100}
+  - component: {fileID: 7643352804066108522}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -671,7 +671,7 @@ MonoBehaviour:
   _spriteRendererFront: {fileID: 1906913166}
   _dice: {fileID: 11400000, guid: c66961769811f4b4faa393647ab264bf, type: 2}
   _player: {fileID: 3529117556607379003}
---- !u!114 &667576100
+--- !u!114 &7643352804066108522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -680,7 +680,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2203771743708642508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424749796a7aa8c4a8fe8316194a75df, type: 3}
+  m_Script: {fileID: 11500000, guid: 383967a2ed4fb5e43b19239376ef30ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  _player: {fileID: 3529117556607379003}
