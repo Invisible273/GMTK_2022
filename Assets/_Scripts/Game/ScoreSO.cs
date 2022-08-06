@@ -6,20 +6,20 @@ namespace GMTK2022
     //[CreateAssetMenu(menuName = "GMTK2022/game/score")]
     public class ScoreSO : ScriptableObject
     {
-        [SerializeField] int _score = 0;
-        public int Score => _score;
+        public int Score { get; private set; }
 
         public event Action<int> OnScoreChanged;
 
         [SerializeField] DiceSO _diceSO;
 
         public void AddScore(int amount) {
-            _score += amount * _diceSO.TopFace.Value;
-            OnScoreChanged?.Invoke(_score);
+            Score += amount * _diceSO.TopFace.Value;
+            OnScoreChanged?.Invoke(Score);
         }
 
         public void ResetScore() {
-            _score = 0;
+            Score = 0;
+            OnScoreChanged?.Invoke(Score);
         }
     }
 }
