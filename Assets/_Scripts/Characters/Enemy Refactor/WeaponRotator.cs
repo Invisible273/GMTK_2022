@@ -1,43 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class WeaponRotator : MonoBehaviour
+namespace GMTK2022
 {
-    private float lastRotationAngle = 0.0f;
+    public class WeaponRotator : MonoBehaviour
+    {
+            
 
-    public void Rotate2Target(Vector3 targetPos) {
-        Vector3 difference = targetPos - transform.position;
-        difference.Normalize();
-        float rotationAngle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotationAngle);
-    }
+        private float lastRotationAngle = 0.0f;
 
-    public void Rotate2TargetSnap(Vector3 targetPos) {
-        Vector3 difference = targetPos - transform.position;
-        difference.Normalize();
-        float targetAngle = 0;
-        if (difference.y <= difference.x)
+        public void Rotate2Target(Vector3 targetPos)
         {
-            if (difference.y >= -difference.x)
-                targetAngle = 0;
-            else
-                targetAngle = 270;
+            Vector3 difference = targetPos - transform.position;
+            difference.Normalize();
+            float rotationAngle = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotationAngle);
         }
-        else
-        {
-            if (difference.y <= -difference.x)
-                targetAngle = 180;
-            else
-                targetAngle = 90;
-        }
-        if (targetAngle != lastRotationAngle)
-        {
-            transform.eulerAngles = new Vector3(
-                transform.eulerAngles.x,
-                transform.eulerAngles.y,
-                targetAngle
-            );
+
+        public void Rotate2TargetSnap(Vector3 targetPos) {
+            Vector3 difference = targetPos - transform.position;
+            difference.Normalize();
+            float targetAngle = 0;
+            if(difference.y <= difference.x) {
+                if(difference.y >= -difference.x)
+                    targetAngle = 0;
+                else
+                    targetAngle = 270;
+            } else {
+                if(difference.y <= -difference.x)
+                    targetAngle = 180;
+                else
+                    targetAngle = 90;
+            }
+            if(targetAngle != lastRotationAngle) {
+                transform.eulerAngles = new Vector3(
+                    transform.eulerAngles.x,
+                    transform.eulerAngles.y,
+                    targetAngle
+                );
+            }
         }
     }
 }

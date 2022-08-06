@@ -1,74 +1,97 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerController))]
-public class Player : Character
+namespace GMTK2022
 {
-    private const float ROLL_THRESHOLD = 5f;
-
-    [SerializeField] private LayerMask collisionLayerMask;
-    [SerializeField] private float maxRollSpeed;
-    [SerializeField] private float rollSpeedDecay;
-
-    private PlayerController playerController;
-    private float currentRollSpeed;
-    private Vector3 currentRollDir;
-    public Action<Vector2> OnRoll;
-    public Action<Vector2> OnRollEnd;
-
-    private float debugRollTime = 0.0f;
-
-    private State state;
-    private enum State
+    [RequireComponent(typeof(PlayerController), typeof(Health))]
+    public class Player : Character
     {
-        Normal,
-        Rolling,
-    }
+        private const float ROLL_THRESHOLD = 5f;
 
-    protected override void Awake() {
-        base.Awake();
-        playerController = GetComponent<PlayerController>();
+        [SerializeField] private LayerMask collisionLayerMask;
+        [SerializeField] private float maxRollSpeed;
+        [SerializeField] private float rollSpeedDecay;
 
-        playerController.onMovementInput += OnDirectionRecieved;
-        playerController.onRollInput += OnRollInputRecieved;
-        playerController.onMousePositionUpdate += OnTargetUpdate;
 
-        state = State.Normal;
-    }
+        private PlayerController playerController;
+        private Vector2 _lastMovementDirection = Vector2.zero;
+        private float currentRollSpeed;
+        private Vector3 currentRollDir;
 
-    private void OnRollInputRecieved(Vector2 movementDir) {
-        state = State.Rolling;
-        currentRollSpeed = maxRollSpeed;
-        currentRollDir = new Vector3(movementDir.x, movementDir.y, 0);
+        public event Action<Vector2> OnIdle;
+        public event Action<Vector2> OnWalk;
+        public event Action<Vector2> OnRoll;
+        public event Action<Vector2> OnRollEnd;
 
-        OnRoll?.Invoke(movementDir);
+        private float debugRollTime = 0.0f;
 
-        debugRollTime = 0.0f;
-    }
-
-    private void FixedUpdate() {
-        switch(state) {
-            case State.Normal:
-                HandleMovement();
-                break;
-            case State.Rolling:
-                HandleRolling();
-                break;
-        }
-    }
-
-    private void HandleRolling() {
-        debugRollTime += Time.fixedDeltaTime;
-
-        transform.position += currentRollDir * currentRollSpeed * Time.fixedDeltaTime;
-        currentRollSpeed -= currentRollSpeed * rollSpeedDecay * Time.fixedDeltaTime;
-        if(currentRollSpeed < ROLL_THRESHOLD)
+        private State state;
+        private enum State
         {
+            Normal,
+            Rolling,
+        }
+
+        protected override void Awake() {
+            base.Awake();
+
+            playerController = GetComponent<PlayerController>();
+
             state = State.Normal;
-            OnRollEnd?.Invoke(currentRollDir);
-            Debug.Log(debugRollTime);
-        } 
+        }
+
+        private void OnEnable() {
+            playerController.onMovementInput += OnMoveDirectionRecieved;
+            playerController.onRollInput += OnRollInputRecieved;
+            playerController.onMousePositionUpdate += OnTargetUpdate;
+        }
+
+        private void OnDisable() {
+            playerController.onMovementInput -= OnMoveDirectionRecieved;
+            playerController.onRollInput -= OnRollInputRecieved;
+            playerController.onMousePositionUpdate -= OnTargetUpdate;
+        }
+
+        protected override void OnMoveDirectionRecieved(Vector2 movementDir) {
+            base.OnMoveDirectionRecieved(movementDir);
+            OnWalk?.Invoke(movementDir);
+            if(movementDir == Vector2.zero) {
+                OnIdle?.Invoke(_lastMovementDirection);
+            }
+            _lastMovementDirection = movementDir;
+        }
+
+        private void OnRollInputRecieved(Vector2 movementDir) {
+            state = State.Rolling;
+            currentRollSpeed = maxRollSpeed;
+            currentRollDir = new Vector3(movementDir.x, movementDir.y, 0);
+
+            OnRoll?.Invoke(movementDir);
+
+            debugRollTime = 0.0f;
+        }
+
+        private void FixedUpdate() {
+            switch(state) {
+                case State.Normal:
+                    HandleMovement();
+                    break;
+                case State.Rolling:
+                    HandleRolling();
+                    break;
+            }
+        }
+
+        private void HandleRolling() {
+            debugRollTime += Time.fixedDeltaTime;
+
+            transform.position += currentRollDir * currentRollSpeed * Time.fixedDeltaTime;
+            currentRollSpeed -= currentRollSpeed * rollSpeedDecay * Time.fixedDeltaTime;
+            if(currentRollSpeed < ROLL_THRESHOLD) {
+                state = State.Normal;
+                OnRollEnd?.Invoke(currentRollDir);
+                //Debug.Log(debugRollTime);
+            }
+        }
     }
 }

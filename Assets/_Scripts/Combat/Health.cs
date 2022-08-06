@@ -1,39 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Health : MonoBehaviour
+namespace GMTK2022
 {
-    [SerializeField] float maxHealth = 100f;
-    float health;
-    private void Awake() 
+    public class Health : MonoBehaviour
     {
-        health = maxHealth;
-    }
-
-    public void GetDamaged(float amount)
-    {
-        if(health-amount > 0)
-        {
-            health-=amount;
+        [SerializeField] float maxHealth = 100f;
+        public event Action onDeath;
+        float health;
+        private void Awake() {
+            health = maxHealth;
         }
-        else if(health - amount <= 0)
-        {
-            Die();
+
+        public virtual void GetDamaged(float amount) {
+            if(health - amount > 0) {
+                health -= amount;
+            } else if(health - amount <= 0) {
+                health = 0;
+                Die();
+            }
         }
-    }
 
-    private void Die()
-    {
-        Destroy(gameObject);
-    } 
-    public float GetMaxHealth()
-    {
-        return maxHealth;
-    }
-    public float GetCurrentHealth()
-    {
-        return health;
-    }
+        private void Die() {
+            onDeath?.Invoke();
+        }
+        public float GetMaxHealth() {
+            return maxHealth;
+        }
+        public float GetCurrentHealth() {
+            return health;
+        }
 
+    }
 }

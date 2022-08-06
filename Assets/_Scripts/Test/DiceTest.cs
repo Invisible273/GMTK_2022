@@ -6,7 +6,6 @@ namespace GMTK2022
     public class DiceTest : MonoBehaviour
     {
         [SerializeField] private DiceSO _diceSO;
-        [SerializeField] private SFXChannelSO _audioChannel;
 
         [Header("UI")]
         public TMP_Text TopText;
@@ -45,8 +44,6 @@ namespace GMTK2022
         }
 
         private void Feedback() {
-            _audioChannel.PlayClip(_diceSO.TopFace.AudioClip);
-
             UpdateUI();
         }
 

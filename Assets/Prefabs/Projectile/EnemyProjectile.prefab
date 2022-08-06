@@ -20,6 +20,22 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 583353022902932810, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 583353022902932810, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1729157617
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005422454778845046, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005422454778845046, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005422454778845046, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
       propertyPath: m_SortingLayerID
       value: -1729157617
       objectReference: {fileID: 0}
@@ -55,9 +71,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 2050315909578750913, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 6470020445200116277, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470020445200116277, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470020445200116277, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470020445200116277, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6470020445200116277, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
       propertyPath: m_LocalPosition.x
@@ -99,14 +131,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6470020445200116277, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7901028746666947315, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
       propertyPath: speed
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7901028746666947315, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
       propertyPath: target
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7901028746666947315, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: _hitClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d4b3ba6f7fdb924cbe78aea5ea670b7, type: 3}
+    - target: {fileID: 7901028746666947315, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: lifetime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901028746666947315, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
+      propertyPath: _audioChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 3465c6935d86c5242a1227e9fca9481d, type: 2}
     m_RemovedComponents:
     - {fileID: 7806908048254664030, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 75d0aebefa793df4b8132cf21822e339, type: 3}

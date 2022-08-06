@@ -1,32 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+namespace GMTK2022
 {
-
-    public int score;
-    private Text ScoreText;
-
-    void Start()
+    public class ScoreManager : MonoBehaviour
     {
-        score = 0;
+        public int score;
+        private Text ScoreText;
 
-        ScoreText = GetComponent<Text>();
-        ScoreText.text = score.ToString();
+        void Start() {
+            score = 0;
+
+            ScoreText = GetComponent<Text>();
+            ScoreText.text = score.ToString();
+        }
+
+
+        void Update() {
+            ScoreText.text = score.ToString();
+        }
+
+        public void IncrementScore() {
+            score++;
+        }
+
     }
-
-        
-    void Update()
-    {
-        ScoreText.text = score.ToString();
-    }
-
-    public void IncrementScore()
-    {
-        score++;
-    }
-
 }
-

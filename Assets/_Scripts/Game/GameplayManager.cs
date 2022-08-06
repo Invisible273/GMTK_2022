@@ -1,120 +1,72 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class GameplayManager : MonoBehaviour
+namespace GMTK2022
 {
-    private const int MAX_SCORE_SIZE = 6;
-
-    [SerializeField]
-    private TextMeshProUGUI scoreBoard = null;
-    [SerializeField] PauseManager pManager = null;
-
-    [HideInInspector]
-    public static GameplayManager instance = null;
-
-    GameState gameState;
-    enum GameState{
-        Pause,
-        Play,
-        Dead
-    }
-
-    private int currentScore = 0;
-
-    private void Awake()
+    public class GameplayManager : MonoBehaviour
     {
-        if (instance == null)
-            instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
+        [SerializeField] private GameStateSO _gameStateSO;
+        [SerializeField] private ScoreSO _scoreSO;
+        [SerializeField] private Health _playerHealth;
 
-    private void Start()
-    {
-        SwitchStateTo(GameState.Pause);
-    }
+        [Header("SFX")]
+        [SerializeField] private SFXChannelSO _audioChannel;
+        [SerializeField] private AudioClip _gameoverClip;
 
-    private void Update() 
-    {
-        switch (gameState)
-        {
-            case GameState.Pause:
-                if(Input.GetKeyDown(KeyCode.Escape))
-                {
-                    
-                    SwitchStateTo(GameState.Play);
-                }
-                break;
-            case GameState.Play:
-                if(Input.GetKeyDown(KeyCode.Escape))
-                {
-                   
-                    SwitchStateTo(GameState.Pause);
-                }
-                break;
-            case GameState.Dead:
-                if(Input.anyKey)
-                {
-                    ResetLevel();
-                    SwitchStateTo(GameState.Play);
-                }
-                break;
+        private void Awake() {
+            ResetGameData();
         }
-    }
 
-    private void SwitchStateTo(GameState state)
-    {
-        gameState = state;
-        switch (gameState)
-        {
-            case GameState.Pause:
-                
-                pManager.Pause();
-           
-                
-                break;
-            case GameState.Play:
-            if(PauseManager.isPaused)
-            {
-                pManager.Pause();
+        private void ResetGameData() {
+            _gameStateSO.ResetGameState();
+            _scoreSO.ResetScore();
+        }
+
+        private void OnEnable() {
+            _playerHealth.onDeath += GameOver;
+        }
+
+        private void OnDisable() {
+            _playerHealth.onDeath -= GameOver;
+        }
+
+        private void Update() {
+            HandleGameStateTransitions();
+        }
+
+        private void HandleGameStateTransitions() {
+            switch(_gameStateSO.CurrentState) {
+                case GameState.Initializing:
+                    _gameStateSO.SwitchToState(GameState.Playing);
+                    break;
+                case GameState.Paused:
+                    if(Input.GetKeyDown(KeyCode.Escape)) {
+                        _gameStateSO.SwitchToState(GameState.Playing);
+                    }
+                    break;
+                case GameState.Playing:
+                    if(Input.GetKeyDown(KeyCode.Escape)) {
+                        _gameStateSO.SwitchToState(GameState.Paused);
+                    }
+                    break;
             }
-
-                
-                break;
-            case GameState.Dead:
-                if (PauseManager.isPaused)
-                {
-                    pManager.Pause();
-                }
-
-                
-                break;
         }
-    }
 
-    private void ResetLevel()
-    {
-        currentScore = 0;
-        AddScore(0);
-    }
+        /// <summary>
+        /// Cleanup/disable scripts when game is over. Inefficient, as it
+        /// does several GetComponent calls. Several scripts need refactoring
+        /// to handle this logic better.
+        /// </summary>
+        public void GameOver() {
+            _gameStateSO.SwitchToState(GameState.GameOver);
+            if(_gameoverClip != null) _audioChannel?.PlayClip(_gameoverClip);
 
-
-    public void GameEnded()
-    {
-        Debug.Log("Your score is: " + currentScore + ". You lost!");
-        SwitchStateTo(GameState.Dead);
-    }
-
-    public void AddScore(int scoreToAdd)
-    {
-        currentScore += scoreToAdd;
-        if (scoreBoard != null)
-        {
-            string score_string = currentScore.ToString();
-            while (score_string.Length < MAX_SCORE_SIZE)
-                score_string = "0" + score_string;
-            scoreBoard.text = "SCORE: " + score_string;
+            _playerHealth.GetComponent<BoxCollider2D>().enabled = false;
+            var rigidbody = _playerHealth.GetComponent<Rigidbody2D>();
+            rigidbody.isKinematic = true;
+            rigidbody.velocity = Vector2.zero;
+            _playerHealth.GetComponent<Player>().enabled = false;
+            _playerHealth.GetComponent<PlayerController>().enabled = false;
+            _playerHealth.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }
