@@ -15,10 +15,6 @@ namespace GMTK2022
 
         public int value; // Goes from 1 to 6
 
-        [Header("SFX")]
-        [SerializeField] private SFXChannelSO _audioChannel;
-        [SerializeField] private AudioClip _hitClip;
-
         private void Awake() {
             rb = GetComponent<Rigidbody2D>();
         }
@@ -46,13 +42,14 @@ namespace GMTK2022
 
         }
         private void OnTriggerEnter2D(Collider2D other) {
-            if(other.gameObject.tag == target.ToString()) {
-                Health tHealth = other.GetComponent<Health>();
-                if(tHealth) {
-                    other.GetComponent<Health>().GetDamaged(damage);
-                    if(_hitClip != null) _audioChannel?.PlayClip(_hitClip);
-                    gameObject.SetActive(false);
-                }
+            if(target == Characters.Player && other.TryGetComponent<PlayerHealth>(out var playerHealth)) {
+                if(playerHealth.Invincible) return;
+                playerHealth.GetDamaged(damage);
+                gameObject.SetActive(false);
+            }
+            else if(target == Characters.Enemy && other.TryGetComponent<Health>(out var enemyHealth)) {
+                enemyHealth.GetDamaged(damage);
+                gameObject.SetActive(false);
             }
         }
 

@@ -685,3 +685,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   _player: {fileID: 3529117556607379003}
+  _audioChannel: {fileID: 11400000, guid: 3465c6935d86c5242a1227e9fca9481d, type: 2}
+  _hitClip: {fileID: 8300000, guid: 5d4b3ba6f7fdb924cbe78aea5ea670b7, type: 3}
